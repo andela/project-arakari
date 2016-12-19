@@ -45,12 +45,19 @@
             Please check your username/password and try again.
           </div>
           <form class="signup form-horizontal" action="/users/session" method="post">
-            <div class="control-group">
+            <!--<div class="control-group">
               <label for="email" class="control-label"></label>
               <div class="controls">
                 <input class="input-info" id="email" type="text" name="email" placeholder="Email" required novalidate />
               </div>
+            </div>-->
+            <div class="control-group">
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope"></i></span>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" required>
             </div>
+            </div>
+
             <div class="control-group">
               <label for="password" class="control-label"></label>
               <div class="controls">
@@ -61,6 +68,12 @@
               <button id="sign-up-btn-other" type='submit'>Sign In</button>
             </div>
           </form>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
