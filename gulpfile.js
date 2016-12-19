@@ -56,7 +56,7 @@ gulp.task('start_server', function () {
     
     browserSync1.init({
         server : {
-            baseDir: "./public/views"
+            baseDir: ["./public/views" , "./app/views/includes" , ".public/css"]
         },
         port : 3002,
         ui: {
