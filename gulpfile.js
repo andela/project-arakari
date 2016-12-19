@@ -45,11 +45,11 @@ gulp.task('css', function() {
 gulp.task('watch', function(){
   gulp.watch('public/css/common.scss', ['sass']);
   gulp.watch('public/css/**', browserSync.reload);
-  gulp.watch('public/views/**', browserSync.reload);
-  gulp.watch(['public/js/**', 'app/**/*.js'], browserSync.reload);
-  gulp.watch('app/views/**', browserSync.reload);
-  livereload.listen();
   gulp.watch('./public/css/*.css', ['css']);
+  gulp.watch('public/views/**', browserSync.reload);
+  gulp.watch('app/views/**', browserSync.reload);
+  gulp.watch(['public/js/**', 'app/**/*.js'], browserSync.reload);
+  livereload.listen();
 });
 
 gulp.task('sass', function () {
