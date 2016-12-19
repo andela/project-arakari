@@ -58,13 +58,20 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('public/css/'))
 });
 
-// starts bower 
+// bower task
 gulp.task('bower', function(){
   bower()
   .pipe(gulp.dest('./public/lib/'))
 });
- 
 
+// jshint task
+gulp.task('lint', function() {
+    gulp.src('.public/js/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+// server 
 gulp.task('node_server', function(){
   nodemon({
     script: 'server.js',
@@ -73,6 +80,7 @@ gulp.task('node_server', function(){
   })
 });
 
+// loads front-end to browser
 gulp.task('start_server', function () {
     
     browserSync.init({
@@ -85,6 +93,7 @@ gulp.task('start_server', function () {
     gulp.watch("./public/**//*.{html,js,css}").on("change", browserSync.reload);
 });
 
+// runs tests
 gulp.task('test_server', function() {
   gulp.src('test/**/*.js', { read: false })
   .pipe(mocha({ reporter: 'spec' }))
