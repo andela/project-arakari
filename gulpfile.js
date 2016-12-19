@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     mocha = require('gulp-mocha'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
+    bower = require('gulp-bower'),
     livereload = require('gulp-livereload');
 
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
@@ -31,7 +32,7 @@ var browserSync = require("browser-sync").create();
 *css - > loads css files and monitors the files for changes                         *
 * displays output in the terminal.                                                  *
 *************************************************************************************/
-gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css']);
+gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css' , 'bower']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -51,10 +52,16 @@ gulp.task('watch', function(){
   gulp.watch('./public/css/*.css', ['css']);
 });
 
-gulp.task('sass',function () {
+gulp.task('sass', function () {
   gulp.src('public/css/common.scss')
   .pipe(sass())
   .pipe(gulp.dest('public/css/'))
+});
+
+// starts bower 
+gulp.task('bower', function(){
+  bower()
+  .pipe(gulp.dest('./public/lib/'))
 });
  
 
