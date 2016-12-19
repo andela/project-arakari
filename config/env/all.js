@@ -4,6 +4,6 @@ var keys = rootPath + '/keys.txt';
 
 module.exports = {
 	root: rootPath,
-	port: process.env.PORT || 3000,
+	port: process.env.PORT || 3009,
     db: 'mongodb://127.0.0.1/arakari'
 };
