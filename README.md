@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/andela/project-arakari.svg?branch=develop)](https://travis-ci.org/andela/project-arakari)
+[![Build Status](https://travis-ci.org/andela/project-arakari.svg?branch=chore%2F13842523%2FIntegrate-Coveralls-code-coverage-service)](https://travis-ci.org/andela/project-arakari)
 [![Coverage Status](https://coveralls.io/repos/github/andela/project-arakari/badge.svg?branch=develop)](https://coveralls.io/github/andela/project-arakari?branch=develop)
 
 Cards for Humanity - [http://cfh.io](http://cfh.io)
