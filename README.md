@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/andela/project-arakari.svg?branch=master)](https://travis-ci.org/andela/project-arakari)
+[![Build Status](https://travis-ci.org/andela/project-arakari.svg?branch=develop)](https://travis-ci.org/andela/project-arakari)
 
 Cards for Humanity - [http://cfh.io](http://cfh.io)
 ===========
