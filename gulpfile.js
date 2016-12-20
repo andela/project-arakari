@@ -9,7 +9,6 @@
 * Note: These libraries can be installed via node package manager.
 */
 var gulp = require('gulp'),
-    livereload = require('gulp-livereload'),
     cleanCSS = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
     mocha = require('gulp-mocha'),
@@ -90,7 +89,7 @@ gulp.task('start_server', function () {
         port : 3009,
     });
 
-    gulp.watch("./public/**//*.{html,js,css}").on("change", browserSync.reload);
+    gulp.watch("./public/**/*.{html,js,css}").on("change", browserSync.reload);
 });
 
 // runs tests
