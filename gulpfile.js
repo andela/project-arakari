@@ -8,10 +8,12 @@
 * Including necesaary libraries for gulp to run.
 * Note: These libraries can be installed via node package manager.
 */
+require('dotenv').config();
+
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
-    eslint = require('gulp-eslint'),
+    //eslint = require('gulp-eslint'),
     mocha = require('gulp-mocha'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
@@ -32,7 +34,7 @@ var browserSync = require("browser-sync").create();
 *css - > loads css files and monitors the files for changes                         *
 * displays output in the terminal.                                                  *
 *************************************************************************************/
-gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css' , 'bower' , 'lint' , 'eslint']);
+gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css' , 'bower' , 'lint' ]);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -72,10 +74,10 @@ gulp.task('lint', function() {
 });
 
 // eslint
-gulp.task('eslint', function () {
-  gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
-.pipe(eslint())
-});
+// gulp.task('eslint', function () {
+//   gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
+// .pipe(eslint())
+// });
 
 // server 
 gulp.task('node_server', function(){
