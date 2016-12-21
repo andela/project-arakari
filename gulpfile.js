@@ -11,6 +11,7 @@
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
+    eslint = require('gulp-eslint'),
     mocha = require('gulp-mocha'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
@@ -31,7 +32,7 @@ var browserSync = require("browser-sync").create();
 *css - > loads css files and monitors the files for changes                         *
 * displays output in the terminal.                                                  *
 *************************************************************************************/
-gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css' , 'bower' , 'lint']);
+gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css' , 'bower' , 'lint' , 'eslint']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -68,6 +69,12 @@ gulp.task('lint', function() {
     gulp.src('.public/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
+});
+
+// eslint
+gulp.task('eslint', function () {
+  gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
+.pipe(eslint())
 });
 
 // server 
