@@ -13,7 +13,7 @@ require('dotenv').config();
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
-    //eslint = require('gulp-eslint'),
+    eslint = require('gulp-eslint'),
     mocha = require('gulp-mocha'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
@@ -74,10 +74,10 @@ gulp.task('lint', function() {
 });
 
 // eslint
-// gulp.task('eslint', function () {
-//   gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
-// .pipe(eslint())
-// });
+ gulp.task('eslint', function () {
+   gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
+ .pipe(eslint())
+ });
 
 // server 
 gulp.task('node_server', function(){
