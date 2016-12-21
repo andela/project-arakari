@@ -15,7 +15,8 @@
   "scripts": {
     "start": "node node_modules/grunt-cli/bin/grunt",
     "test": "node node_modules/grunt-cli/bin/grunt test",
-    "postinstall": "node node_modules/grunt-cli/bin/grunt install"
+    "postinstall": "node node_modules/grunt-cli/bin/grunt install",
+    "coverage": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "express": "~3.4.0",
