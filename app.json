@@ -1,11 +1,16 @@
 {
-  "name": "Project Arakari",
-  "description": "TODO: Add a short description about Project Arakari",
-  "keywords": [
-    "small",
-    "sharp",
-    "tool"
-  ],
+  "name": "project-arakari",
+  "scripts": {},
+  "env": {
+    "MONGOHQ_URL": {
+      "required": true
+    }
+  },
+  "formation": {},
   "addons": [],
-  "env": {}
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
