@@ -12,8 +12,8 @@ require('dotenv').config();
 
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
-    jshint = require('gulp-jshint'),
-    eslint = require('gulp-eslint'),
+    //jshint = require('gulp-jshint'),
+    //eslint = require('gulp-eslint'),
     mocha = require('gulp-mocha'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
