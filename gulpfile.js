@@ -34,7 +34,7 @@ var browserSync = require("browser-sync").create();
 *css - > loads css files and monitors the files for changes                         *
 * displays output in the terminal.                                                  *
 *************************************************************************************/
-gulp.task("default", ["start_server"  ,'node_server' , 'test_server' , 'watch' ,'sass','css' , 'bower' , 'lint' , 'eslint' , 'install']);
+gulp.task("default", ["start_server"  ,'node_server' , 'watch' ,'sass','css' , 'bower' , 'lint' , 'eslint' , 'install']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -101,15 +101,15 @@ gulp.task('start_server', function () {
     });
 
     gulp.watch("./public/**/*.{html,js,css}").on("change", browserSync.reload);
-});
+}); 
 
 // runs tests
-gulp.task('test_server', function() {
-  gulp.src('test/**/*.js', { read: false })
-  .pipe(mocha({ reporter: 'spec' }))
+// gulp.task('test_server', function() {
+//   gulp.src('test/**/*.js', { read: false })
+//   .pipe(mocha({ reporter: 'spec' }))
 
-  gulp.watch('test/**/*.js').on("change" , browserSync.reload);
-});
+//   gulp.watch('test/**/*.js').on("change" , browserSync.reload);
+// });
 
 // install task 
 gulp.task('install', ['bower']);
