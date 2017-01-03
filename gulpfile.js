@@ -66,6 +66,9 @@ gulp.task('bower', function(){
   .pipe(gulp.dest('./public/lib/'))
 });
 
+// install task 
+gulp.task('install', ['bower']);
+
 // jshint task
 gulp.task('lint', function() {
     gulp.src('.public/js/**/*.js')
