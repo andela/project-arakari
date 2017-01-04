@@ -8,7 +8,7 @@
 * Including necesaary libraries for gulp to run.
 * Note: These libraries can be installed via node package manager.
 */
-require('dotenv').config();
+//require('dotenv').config();
 
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
@@ -80,13 +80,13 @@ gulp.task('lint', function() {
  });
 
 // server 
-gulp.task('node_server', function(){
-  nodemon({
-    script: 'server.js',
-    ext: 'js',
-    env: { NODE_ENV: 'development' }
-  })
-});
+// gulp.task('node_server', function(){
+//   nodemon({
+//     script: 'server.js',
+//     ext: 'js',
+//     env: { NODE_ENV: 'development' }
+//   })
+// });
 
 // loads front-end to browser
 gulp.task('start_server', function () {
