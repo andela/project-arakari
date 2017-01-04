@@ -36,7 +36,7 @@ gulp.task("default", ["start_server" ,'test_server', 'watch' ,'sass','css' , 'bo
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
-  gulp.src('./public/css/*.css')
+  gulp.src('public/css/*.css')
     .pipe(cleanCSS())
     .pipe(gulp.dest('css'))
     .pipe(livereload("./public/views"));
@@ -45,7 +45,7 @@ gulp.task('css', function() {
 gulp.task('watch', function(){
   gulp.watch('public/css/common.scss', ['sass']);
   gulp.watch('public/css/**', browserSync.reload);
-  gulp.watch('./public/css/*.css', ['css']);
+  gulp.watch('public/css/*.css', ['css']);
   gulp.watch('public/views/**', browserSync.reload);
   gulp.watch('app/views/**', browserSync.reload);
   gulp.watch(['public/js/**', 'app/**/*.js'], browserSync.reload);
@@ -61,7 +61,7 @@ gulp.task('sass', function () {
 // bower task
 gulp.task('bower', function(){
   bower()
-  .pipe(gulp.dest('./public/lib/'))
+  .pipe(gulp.dest('public/lib/'))
 });
 
 
