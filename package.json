@@ -15,7 +15,7 @@
   "scripts": {
     "start": "node node_modules/gulp-cli/bin/gulp",
     "postinstall": "node node_modules/gulp-cli/bin/gulp install",
-    "test": "node_modules/karma/bin/karma start",
+    "test": "node node_modules/karma/bin/karma start",
     "mocha": "node node_modules/gulp-cli/bin/gulp test",
     "install": "node node_modules/gulp-cli/bin/gulp install",
     "coverage": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
