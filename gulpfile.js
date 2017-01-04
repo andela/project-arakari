@@ -93,7 +93,7 @@ gulp.task('start_server', function () {
     
     browserSync.init({
         server : {
-            baseDir: ["./public/views" , "./app/views/includes" , "./public/css"]
+            baseDir: ["./public/views" , "./app/views/includes" , "./public/css" , "./public/lib"]
         },
         port : 3009,
     });
