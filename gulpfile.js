@@ -111,3 +111,6 @@ gulp.task('test_server', function() {
 
 // install task 
 gulp.task('install', ['bower']);
+
+// test task.
+gulp.task('test', ['test_server']);
