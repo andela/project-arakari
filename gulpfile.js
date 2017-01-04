@@ -64,7 +64,11 @@ gulp.task('bower', function(){
   .pipe(gulp.dest('public/lib/'))
 });
 
-
+// mocha test
+gulp.task('mocha', function() {
+  gulp.src('test/**/*.js', { read: false })
+  .pipe(mocha({ reporter: 'spec' }))
+});
 
 // jshint task
 // gulp.task('lint', function() {
@@ -111,3 +115,5 @@ gulp.task('test_server', function() {
 
 // install task 
 gulp.task('install', ['bower']);
+// test task
+gulp.task('test', ['mocha']);
