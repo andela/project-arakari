@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Dec 20 2016 22:46:45 GMT+0300 (EAT)
+// Generated on Wed Jan 04 2017 08:35:11 GMT+0300 (EAT)
 
 module.exports = function(config) {
   config.set({
@@ -14,7 +14,10 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: ['./test/test-spec.js'
+    files: [
+    './test/test-spec.js',
+    './public/lib/angular/angular.js',
+    '.public/lib/jquery/jquery.js'
     ],
 
 
@@ -26,13 +29,15 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        './test/*.js': 'coverage'
+
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
 
     // web server port
