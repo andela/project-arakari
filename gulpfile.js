@@ -8,7 +8,7 @@
 * Including necesaary libraries for gulp to run.
 * Note: These libraries can be installed via node package manager.
 */
-require('dotenv').config();
+
 
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
@@ -32,7 +32,7 @@ var browserSync = require("browser-sync").create();
 *css - > loads css files and monitors the files for changes                         *
 * displays output in the terminal.                                                  *
 *************************************************************************************/
-gulp.task("default", ["start_server"  ,'node_server' , 'watch' ,'sass','css' , 'bower' , 'lint' , 'eslint' , 'install']);
+gulp.task("default", ["start_server" ,'test_server', 'watch' ,'sass','css' , 'bower'  , 'install']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -67,33 +67,33 @@ gulp.task('bower', function(){
 
 
 // jshint task
-gulp.task('lint', function() {
-    gulp.src('.public/js/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
-});
+// gulp.task('lint', function() {
+//     gulp.src('.public/js/**/*.js')
+//     .pipe(jshint())
+//     .pipe(jshint.reporter('default'));
+// });
 
 // eslint
- gulp.task('eslint', function () {
-   gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
- .pipe(eslint())
- });
+ // gulp.task('eslint', function () {
+ //   gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
+ // .pipe(eslint())
+ // });
 
 // server 
-gulp.task('node_server', function(){
-  nodemon({
-    script: 'server.js',
-    ext: 'js',
-    env: { NODE_ENV: 'development' }
-  })
-});
+// gulp.task('node_server', function(){
+//   nodemon({
+//     script: 'server.js',
+//     ext: 'js',
+//     env: { NODE_ENV: 'development' }
+//   })
+// });
 
 // loads front-end to browser
 gulp.task('start_server', function () {
     
     browserSync.init({
         server : {
-            baseDir: ["./public/views" , "./app/views/includes" , ".public/css"]
+            baseDir: ["./public/views" , "./app/views/includes" , "./public/css"]
         },
         port : 3009,
     });
@@ -102,12 +102,12 @@ gulp.task('start_server', function () {
 }); 
 
 // runs tests
-// gulp.task('test_server', function() {
-//   gulp.src('test/**/*.js', { read: false })
-//   .pipe(mocha({ reporter: 'spec' }))
+gulp.task('test_server', function() {
+  gulp.src('test/**/*.js', { read: false })
+  .pipe(mocha({ reporter: 'spec' }))
 
-//   gulp.watch('test/**/*.js').on("change" , browserSync.reload);
-// });
+  gulp.watch('test/**/*.js').on("change" , browserSync.reload);
+});
 
 // install task 
 gulp.task('install', ['bower']);
