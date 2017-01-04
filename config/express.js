@@ -1,3 +1,4 @@
+
 /**
  * Module dependencies.
  */
@@ -29,7 +30,7 @@ module.exports = function(app, passport, mongoose) {
     }));
 
     //Setting the fav icon and static folder
-    app.use(favicon('${config.root}/public/img/icons/favicon.ico'));
+    app.use(favicon(`${config.root}/public/img/icons/favicon.ico`));
     app.use(express.static(config.root + '/public'));
 
     //Don't use logger for test env
