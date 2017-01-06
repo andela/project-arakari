@@ -113,6 +113,20 @@ module.exports = function(io) {
     if (requestedGameId.length && allGames[requestedGameId]) {
       console.log('Room',requestedGameId,'is valid');
       var game = allGames[requestedGameId];
+
+      
+      if (game.state === 'waiting for players to pick') {
+        playerID = player.socket.id;
+        // Alerts players trying to access an already full game
+        if (game.players.length === game.playerMaxLimit) {
+          game.Notification(playerID, 'Hey full house, get lost');
+        } 
+        // Alerts players trying to request an already started game 
+        else {
+          game.Notification(playerID, 'Game has already started');
+        }
+      }
+
       // Ensure that the same socket doesn't try to join the same game
       // This can happen because we rewrite the browser's URL to reflect
       // the new game ID, causing the view to reload.

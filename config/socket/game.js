@@ -84,6 +84,14 @@ Game.prototype.sendNotification = function(msg) {
   this.io.sockets.in(this.gameID).emit('notification', {notification: msg});
 };
 
+// Called when a player tries to enter a game that has already started
+Game.prototype.Notification = function(playerID, msg) {
+  // sends a notification to a specific player
+  if (this.io.sockets.connected[playerID]) {
+    this.io.sockets.connected[playerID].emit('notification', {notification: msg});
+}
+};
+
 // Currently called on each joinGame event from socket.js
 // Also called on removePlayer IF game is in 'awaiting players' state
 Game.prototype.assignPlayerColors = function() {
