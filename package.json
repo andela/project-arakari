@@ -36,6 +36,7 @@
     "grunt-bower-task": "~0.4.0",
     "grunt-cli": "~1.2.0",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^7.2.1",
     "mean-logger": "~0.0.1",
     "method-override": "^2.3.7",
     "mongoose": "~4.7.5",
