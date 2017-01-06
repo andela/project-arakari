@@ -21,7 +21,9 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development',
     mongoose = require('mongoose');
 
 //Bootstrap db connection
+mongoose.Promise = global.Promise;
 var db = mongoose.connect(config.db);
+//set the jwt secretKeyWord
 
 //Bootstrap models
 var models_path = __dirname + '/app/models';
