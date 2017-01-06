@@ -120,7 +120,7 @@ exports.register = function(req, res) {
 /**
  * Create user
  */
-exports.create = function(req, res, next) {
+exports.create = function(req, res) {
     if (req.body.name && req.body.password && req.body.email) {
         User.findOne({
             email: req.body.email
@@ -137,16 +137,9 @@ exports.create = function(req, res, next) {
                             user: user
                         });
                     }
-                    console.log('JWT' + generateToken(user));
                     req.logIn(user, function(err) {
-                        if (err) {
-                            return next(err);
-                        } else {
-                            res.status(201).redirect('/#!/').send({
-                                token: 'JWT' + generateToken(user),
-                                user: user
-                            });
-                        }
+                        if (err) return next(err);
+                        return res.redirect('/#!/');
                     });
                 });
             } else {
