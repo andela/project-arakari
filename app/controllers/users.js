@@ -1,9 +1,17 @@
 /**
  * Module dependencies.
  */
+var jwt = require('jsonwebtoken');
 var mongoose = require('mongoose'),
   User = mongoose.model('User');
 var avatars = require('./avatars').all();
+
+var generateToken = function(user){
+  return jwt.sign(user, config.secret, {
+    expiresIn: 10080 // in seconds
+  });
+}
+
 
 /**
  * Auth callback
@@ -22,6 +30,38 @@ exports.signin = function(req, res) {
     res.redirect('/#!/app');
   }
 };
+
+exports.login = function(req, res){
+  if(req.body.email && req.body.password) {
+            User.findOne({
+                email: req.body.email
+            }, function(err, user) {
+                if (err) {
+                    return res.send({
+                      msg: 'An error occured' 
+                    });
+                }
+                if (!user) {
+                    return res.send({
+                        message: 'Unknown user'
+                    });
+                }
+                if (!user.authenticate(req.body.password)) {
+                    return res.send({
+                        message: 'Invalid password'
+                    });
+                }
+                //user.email = null;
+                user.hashed_password = null;
+                res.status(200).json({
+                  token: 'JWt'+ generateToken(user),
+                  user: user 
+                })
+            });
+        } 
+
+
+}
 
 /**
  * Show sign up form
@@ -93,10 +133,12 @@ exports.create = function(req, res) {
               user: user
             });
           }
+
           req.logIn(user, function(err) {
             if (err) return next(err);
             return res.redirect('/#!/');
           });
+          
         });
       } else {
         return res.redirect('/#!/signup?error=existinguser');
