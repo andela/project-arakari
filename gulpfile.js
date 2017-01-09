@@ -32,7 +32,7 @@ var browserSync = require("browser-sync").create();
 *css - > loads css files and monitors the files for changes                         *
 * displays output in the terminal.                                                  *
 *************************************************************************************/
-gulp.task("default", ["start_server" ,'test', 'watch' ,'sass','css' , 'bower'  , 'install']);
+gulp.task("default", [ 'start' , 'test', 'watch' ,'sass','css' , 'bower'  , 'install']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -70,42 +70,20 @@ gulp.task('mocha', function() {
   .pipe(mocha({ reporter: 'spec' }))
 });
 
-// jshint task
-// gulp.task('lint', function() {
-//     gulp.src('.public/js/**/*.js')
-//     .pipe(jshint())
-//     .pipe(jshint.reporter('default'));
-// });
+gulp.task('mocha', function (){
+  gulp.src('test/**/*.js' )
+  .pipe(mocha({reporter: 'spec'}))
+});
 
-// eslint
- // gulp.task('eslint', function () {
- //   gulp.src(['public/js/**/*.js','test/**/*.js','app/**/*.js'])
- // .pipe(eslint())
- // });
+gulp.task('start', function () {
+  nodemon({
+    script: 'server.js'
+  , ext: 'js html'
+  , env: { 'NODE_ENV': 'development' }
+  })
+})
 
-// server 
-// gulp.task('node_server', function(){
-//   nodemon({
-//     script: 'server.js',
-//     ext: 'js',
-//     env: { NODE_ENV: 'development' }
-//   })
-// });
-
-// loads front-end to browser
-gulp.task('start_server', function () {
-    
-    browserSync.init({
-        server : {
-            baseDir: ["./public/views" , "./app/views/includes" , "./public/css" , "./public/lib"]
-        },
-        port : 3009,
-    });
-
-    gulp.watch("./public/**/*.{html,js,css}").on("change", browserSync.reload);
-}); 
-
-// runs tests
+// // runs tests
 // gulp.task('test_server', function() {
 //   gulp.src('test/**/*.js', { read: false })
 //   .pipe(mocha({ reporter: 'spec' }))
