@@ -2,16 +2,16 @@
  * Module dependencies.
  */
 var jwt = require('jsonwebtoken');
-var mongoose = require('mongoose'),
-  User = mongoose.model('User');
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
 var avatars = require('./avatars').all();
 
+// set up  jwt
 var generateToken = function(user){
   return jwt.sign(user, config.secret, {
-    expiresIn: 10080 // in seconds
+    expiresIn: 86400 //in seconds
   });
 }
-
 
 /**
  * Auth callback
@@ -38,7 +38,7 @@ exports.login = function(req, res){
             }, function(err, user) {
                 if (err) {
                     return res.send({
-                      msg: 'An error occured' 
+                      msg: 'An error occured'
                     });
                 }
                 if (!user) {
@@ -53,12 +53,16 @@ exports.login = function(req, res){
                 }
                 //user.email = null;
                 user.hashed_password = null;
+
+                var userInfo  = {
+                  email: req.body.email
+                };
                 res.status(200).json({
-                  token: 'JWt'+ generateToken(user),
-                  user: user 
+                  token: 'JWt'+ generateToken(userInfo),
+                  user: userInfo
                 })
             });
-        } 
+        }
 
 
 }
@@ -89,7 +93,7 @@ exports.session = function(req, res) {
   res.redirect('/');
 };
 
-/** 
+/**
  * Check avatar - Confirm if the user who logged in via passport
  * already has an avatar. If they don't have one, redirect them
  * to our Choose an Avatar page.
@@ -138,7 +142,7 @@ exports.create = function(req, res) {
             if (err) return next(err);
             return res.redirect('/#!/');
           });
-          
+
         });
       } else {
         return res.redirect('/#!/signup?error=existinguser');
