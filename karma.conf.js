@@ -15,9 +15,18 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+    './bower_components/angular/angular.js',
+    './bower_components/angular-mocks/angular-mocks.js',
+    './bower_components/angular-cookies/angular-cookies.js',
+    './bower_components/angular-resource/angular-resource.js',
+    './bower_components/angular-route/angular-route.js',
+    
+    './public/js/app.js',
+    './public/js/controllers/*.js',
+    './public/js/services/*.js',
+    './public/js/directives.js',
+    './public/js/filters/*.js',
     './test/test-spec.js',
-    './public/lib/angular/angular.js',
-    '.public/lib/jquery/jquery.js'
     ],
 
 
@@ -29,8 +38,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        './test/*.js': 'coverage'
-
+        './public/js/controllers/*.js': 'coverage'
     },
 
 
