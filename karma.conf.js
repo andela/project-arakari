@@ -20,7 +20,6 @@ module.exports = function(config) {
     './bower_components/angular-cookies/angular-cookies.js',
     './bower_components/angular-resource/angular-resource.js',
     './bower_components/angular-route/angular-route.js',
-    
     './public/js/app.js',
     './public/js/controllers/*.js',
     './public/js/services/*.js',
