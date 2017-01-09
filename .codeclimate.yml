@@ -1,6 +1,11 @@
 engines:
-  eslint:
+  duplication:
     enabled: true
+    config:
+    languages:
+      - javascript
+eslint:
+  enabled: true
   config:
     config: path/to/.eslintrc.js
 
