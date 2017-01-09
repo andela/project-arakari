@@ -4,11 +4,10 @@ engines:
     config:
     languages:
       - javascript
-eslint:
-  enabled: true
-  config:
-    config: path/to/.eslintrc.js
-
+  eslint:
+    enabled: true
+    config:
+      config: path/to/.eslintrc.js
 ratings:
    paths:
    - "**.js"
