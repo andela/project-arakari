@@ -1,21 +1,22 @@
-var jwt = require('jsonwebtoken'),
-    config = require('../../config/config');
-
-function generateToken(user) {
-    return jwt.sign(user, config.secret, {
-        expiresIn: 10080 // in seconds
-    });
-}
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose'),
-    User = mongoose.model('User');
+var jwt = require('jsonwebtoken');
+var config = require('../../config/config');
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
 var avatars = require('./avatars').all();
 
-/**
- * Auth callback
- */
+// set up jwt
+var generateToken = function(user) {
+        console.log(user);
+        return jwt.sign(user, config.secret, {
+            expiresIn: 60 * 60 * 24 // in seconds
+        });
+    }
+    /**
+     * Auth callback
+     */
 exports.authCallback = function(req, res, next) {
     res.redirect('/chooseavatars');
 };
@@ -99,9 +100,13 @@ exports.register = function(req, res) {
                             user: user
                         });
                     }
+                    //var userInfo = setUserInfo(req.user);
+                    var userInfo = {
+                        email: req.body.email
+                    };
                     res.status(200).json({
-                        token: 'JWT' + generateToken(user),
-                        user: user
+                        token: 'JWT' + generateToken(userInfo),
+                        user: userInfo
                     });
                 });
             } else {
