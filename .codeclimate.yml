@@ -1,13 +1,24 @@
+---
 engines:
+  csslint:
+    enabled: true
   duplication:
     enabled: true
     config:
-    languages:
+      languages:
       - javascript
   eslint:
     enabled: true
     config:
       config: path/to/.eslintrc.js
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
 ratings:
-   paths:
-   - "**.js"
+  paths:
+  - "**.js"
+exclude_paths:
+- config/
+- node_modules/
+- test/
