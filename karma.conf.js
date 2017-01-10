@@ -15,17 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-    './bower_components/angular/angular.js',
-    './bower_components/angular-mocks/angular-mocks.js',
-    './bower_components/angular-cookies/angular-cookies.js',
-    './bower_components/angular-resource/angular-resource.js',
-    './bower_components/angular-route/angular-route.js',
+    './public/lib/angular/angular.js',
+    './public/lib/angular-route/angular-route.js',
+    './public/lib/angular-mocks/angular-mocks.js',
+    './public/js/services/*.js',
     './public/js/app.js',
     './public/js/controllers/*.js',
-    './public/js/services/*.js',
     './public/js/directives.js',
     './public/js/filters/*.js',
-    './test/test-spec.js',
+    './test/test.spec.js'
     ],
 
 
@@ -37,7 +35,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        './public/js/controllers/*.js': 'coverage'
+        './public/js/**/*.js': 'coverage'
     },
 
 
@@ -66,12 +64,12 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox', 'PhantomJS'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
