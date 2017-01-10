@@ -9,8 +9,6 @@ engines:
       - javascript
   eslint:
     enabled: true
-    config:
-      config: ./.eslintrc.js
   fixme:
     enabled: true
   phpmd:
