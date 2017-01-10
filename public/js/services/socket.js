@@ -1,4 +1,4 @@
-angular.module('mean.system')
+angular.module('mean.system', [])
 .factory('socket', ['$rootScope', function($rootScope){
   var socket = io.connect();
   return {

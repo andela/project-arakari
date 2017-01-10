@@ -1,4 +1,6 @@
-angular.module('mean.system')
+// When defining a module with no module dependencies,
+// the array of dependencies should be defined and empty.
+angular.module('mean.system', [])
   .factory('game', ['socket', '$timeout', function (socket, $timeout) {
 
   var game = {
