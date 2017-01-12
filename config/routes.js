@@ -7,6 +7,7 @@ module.exports = function(app, passport, auth) {
     app.get('/signup', users.signup);
     app.get('/chooseavatars', users.checkAvatar);
     app.get('/signout', users.signout);
+    app.post('/api/auth/signup', users.register);
 
     //Setting up the users api
     app.post('/users', users.create);
@@ -96,6 +97,12 @@ module.exports = function(app, passport, auth) {
             url: req.originalUrl,
             error: 'Not found'
         });
+    });
+    // protected Route
+
+    app.get('/api', users.authToken, function(req, res) {
+        res.status(200);
+        res.json({ msg: 'welcome to the landing page' });
     });
 
 };
