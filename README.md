@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/andela/project-arakari.svg?branch=develop)](https://travis-ci.org/andela/project-arakari)
-[![Coverage Status](https://coveralls.io/repos/github/andela/project-arakari/badge.svg)](https://coveralls.io/github/andela/project-arakari)
+[![Coverage Status](https://coveralls.io/repos/github/andela/project-arakari/badge.svg?branch=chore%2F137011075%2FInclude-bundling-task-in-gulp-task-runner)](https://coveralls.io/github/andela/project-arakari?branch=chore%2F137011075%2FInclude-bundling-task-in-gulp-task-runner)
 [![Code Climate](https://codeclimate.com/github/andela/project-arakari/badges/gpa.svg)](https://codeclimate.com/github/andela/project-arakari)
 
 Cards for Humanity - [http://cfh.io](http://cfh.io)
