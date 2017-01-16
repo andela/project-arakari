@@ -1,3 +1,14 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="154609.apps.googleusercontent.com">
+<script type="text/javascript">function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
+</script>
+
 <div id="main-bod" ng-controller="IndexController">
   <!-- Fixed Logo & Menu Bar Start -->
   <div id="top-part">
@@ -59,6 +70,7 @@
             </div>
             <div class="form-actions top-margin">
               <button id="sign-up-btn-other" type='submit'>Sign In</button>
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
             </div>
           </form>
         </div>

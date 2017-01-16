@@ -7,6 +7,7 @@ module.exports = function(app, passport, auth) {
     app.get('/signup', users.signup);
     app.get('/chooseavatars', users.checkAvatar);
     app.get('/signout', users.signout);
+    app.post('/api/auth/signin', users.login);
     app.post('/api/auth/signup', users.register);
 
     //Setting up the users api
@@ -99,8 +100,7 @@ module.exports = function(app, passport, auth) {
         });
     });
     // protected Route
-
-    app.get('/api', users.authToken, function(req, res) {
+        app.get('/api', users.authToken, function(req, res) {
         res.status(200);
         res.json({ msg: 'welcome to the landing page' });
     });
