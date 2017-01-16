@@ -100,7 +100,7 @@ module.exports = function(app, passport, auth) {
     });
     // protected Route
 
-    app.get('/api', users.authToken, function(reg, res) {
+    app.get('/api', users.authToken, function(req, res) {
         res.status(200);
         res.json({ msg: 'welcome to the landing page' });
     });
