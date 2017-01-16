@@ -1,0 +1,97 @@
+/**
+ * This file is dependent on gulp which automate tasks.
+ *Author : Collins 
+
+ */
+
+/**
+* Including necesaary libraries for gulp to run.
+* Note: These libraries can be installed via node package manager.
+*/
+
+
+var gulp = require('gulp'),
+    cleanCSS = require('gulp-clean-css'),
+    mocha = require('gulp-mocha'),
+    nodemon = require('gulp-nodemon'),
+    sass = require('gulp-sass'),
+    bower = require('gulp-bower'),
+    livereload = require('gulp-livereload');
+
+ // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
+var browserSync = require("browser-sync").create();
+
+/************************************************************************************
+* Initalizes default tasks to be run by gulp                                        *
+* start_server - > this runs to open the application index page on browser          *
+* node_server - > this runs the server.js file.simulates cmd[nodemon server.js]     *
+* or command [node server.js].                                                      *
+* test_server - > this runs the tests in the application.                           *
+* watch - > watches changes in the files listed under it                            *
+* sass - > loads sass files                                                         *
+*css - > loads css files and monitors the files for changes                         *
+* displays output in the terminal.                                                  *
+*************************************************************************************/
+gulp.task("default", [ 'start' , 'test', 'watch' ,'sass','css' , 'bower'  , 'install']);
+
+// monitors files for changes and reloads web browser
+gulp.task('css', function() {
+  gulp.src('public/css/*.css')
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('css'))
+    .pipe(livereload("./public/views"));
+});
+
+gulp.task('watch', function(){
+  gulp.watch('public/css/common.scss', ['sass']);
+  gulp.watch('public/css/**', browserSync.reload);
+  gulp.watch('public/css/*.css', ['css']);
+  gulp.watch('public/views/**', browserSync.reload);
+  gulp.watch('app/views/**', browserSync.reload);
+  gulp.watch(['public/js/**', 'app/**/*.js'], browserSync.reload);
+  livereload.listen();
+});
+
+gulp.task('sass', function () {
+  gulp.src('public/css/common.scss')
+  .pipe(sass())
+  .pipe(gulp.dest('public/css/'))
+});
+
+// bower task
+gulp.task('bower', function(){
+  bower()
+  .pipe(gulp.dest('public/lib/'))
+});
+
+// mocha test
+gulp.task('mocha', function() {
+  gulp.src('test/**/*.js', { read: false })
+  .pipe(mocha({ reporter: 'spec' }))
+});
+
+gulp.task('mocha', function (){
+  gulp.src('test/**/*.js' )
+  .pipe(mocha({reporter: 'spec'}))
+});
+
+gulp.task('start', function () {
+  nodemon({
+    script: 'server.js'
+  , ext: 'js html'
+  , env: { 'NODE_ENV': 'development' }
+  })
+})
+
+// // runs tests
+// gulp.task('test_server', function() {
+//   gulp.src('test/**/*.js', { read: false })
+//   .pipe(mocha({ reporter: 'spec' }))
+
+//   gulp.watch('test/**/*.js').on("change" , browserSync.reload);
+// });
+
+// install task 
+gulp.task('install', ['bower']);
+// test task
+gulp.task('test', ['mocha']);

@@ -3,6 +3,8 @@ var path = require('path'),
 var keys = rootPath + '/keys.txt';
 
 module.exports = {
+	root: rootPath,
+	port: process.env.PORT || 3025,
     secret: process.env.secret,
     root: rootPath,
     port: process.env.PORT || 3001,
