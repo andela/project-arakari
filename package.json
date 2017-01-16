@@ -68,6 +68,7 @@
     "grunt-contrib-watch": "~1.0.0",
     "grunt-mocha-test": "~0.13.2",
     "grunt-nodemon": "~0.4.2",
+    "gulp-bundle-assets": "^2.27.1",
     "istanbul": "^0.4.5",
     "should": "~11.1.2",
     "standard": "^8.6.0",
