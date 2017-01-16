@@ -7,9 +7,6 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var avatars = require('./avatars').all();
 
-/**
- * Auth callback
- */
 // set up jwt
 var generateToken = function(user) {
         console.log(user);
@@ -20,7 +17,6 @@ var generateToken = function(user) {
     /**
      * Auth callback
      */
-
 exports.authCallback = function(req, res, next) {
     res.redirect('/chooseavatars');
 };
@@ -35,42 +31,6 @@ exports.signin = function(req, res) {
         res.redirect('/#!/app');
     }
 };
-
-exports.login = function(req, res) {
-    if (req.body.email && req.body.password) {
-        User.findOne({
-            email: req.body.email
-        }, function(err, user) {
-            if (err) {
-                return res.send({
-                    msg: 'An error occured'
-                });
-            }
-            if (!user) {
-                return res.send({
-                    message: 'Unknown user'
-                });
-            }
-            if (!user.authenticate(req.body.password)) {
-                return res.send({
-                    message: 'Invalid password'
-                });
-            }
-            //user.email = null;
-            user.hashed_password = null;
-
-            var userInfo = {
-                email: req.body.email
-            };
-            res.status(200).json({
-                token: 'JWt' + generateToken(userInfo),
-                user: userInfo
-            })
-        });
-    }
-
-
-}
 
 /**
  * Show sign up form
@@ -99,7 +59,7 @@ exports.session = function(req, res) {
     res.redirect('/');
 };
 
-/**
+/** 
  * Check avatar - Confirm if the user who logged in via passport
  * already has an avatar. If they don't have one, redirect them
  * to our Choose an Avatar page.
@@ -161,6 +121,40 @@ exports.register = function(req, res) {
         });
     }
 };
+exports.login = function(req, res) {
+    if (req.body.email && req.body.password) {
+        User.findOne({
+            email: req.body.email
+        }, function(err, user) {
+            if (err) {
+                return res.send({
+                    msg: 'An error occured'
+                });
+            }
+            if (!user) {
+                return res.send({
+                    message: 'Unknown user'
+                });
+            }
+            if (!user.authenticate(req.body.password)) {
+                return res.send({
+                    message: 'Invalid password'
+                });
+            }
+            //user.email = null;
+            user.hashed_password = null;
+
+            var userInfo = {
+                email: req.body.email
+            };
+            res.status(200).json({
+                token: 'JWt' + generateToken(userInfo),
+                user: userInfo
+            })
+        });
+    }
+}
+
 
 /**
  * Create user
@@ -264,7 +258,8 @@ exports.me = function(req, res) {
  * Find user by id
  */
 exports.user = function(req, res, next, id) {
-    User.findOne({
+    User
+        .findOne({
             _id: id
         })
         .exec(function(err, user) {
@@ -273,16 +268,6 @@ exports.user = function(req, res, next, id) {
             req.profile = user;
             next();
         });
-    User.findOne({
-            _id: id
-        })
-        .exec(function(err, user) {
-            if (err) return next(err);
-            if (!user) return next(new Error('Failed to load User ' + id));
-            req.profile = user;
-            next();
-        });
-    develop
 };
 
 exports.authToken = function(req, res, next) {
