@@ -32,6 +32,40 @@ exports.signin = function(req, res) {
     }
 };
 
+exports.login = function(req, res) {
+    if (req.body.email && req.body.password) {
+        User.findOne({
+            email: req.body.email
+        }, function(err, user) {
+            if (err) {
+                return res.send({
+                    msg: 'An error occured'
+                });
+            }
+            if (!user) {
+                return res.send({
+                    message: 'Unknown user'
+                });
+            }
+            if (!user.authenticate(req.body.password)) {
+                return res.send({
+                    message: 'Invalid password'
+                });
+            }
+            //user.email = null;
+            user.hashed_password = null;
+
+            var userInfo = {
+                email: req.body.email
+            };
+            res.status(200).json({
+                token: 'JWt' + generateToken(userInfo),
+                user: userInfo
+            })
+        });
+    }
+}
+
 /**
  * Show sign up form
  */
@@ -59,7 +93,7 @@ exports.session = function(req, res) {
     res.redirect('/');
 };
 
-/** 
+/**
  * Check avatar - Confirm if the user who logged in via passport
  * already has an avatar. If they don't have one, redirect them
  * to our Choose an Avatar page.
