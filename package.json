@@ -14,11 +14,10 @@
   },
   "scripts": {
     "start": "node node_modules/gulp-cli/bin/gulp",
-    "postinstall": "node node_modules/gulp-cli/bin/gulp install",
-    "test": "node_modules/karma/bin/karma start",
-    "gulpTest": "node node_modules/gulp-cli/bin/gulp test",
-    "install": "node node_modules/gulp-cli/bin/gulp install",
-    "coverage": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/gulp-cli/bin/gulp test",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "postinstall": "node node_modules/gulp-cli/bin/gulp install"
+
   },
   "dependencies": {
     "async": "~2.1.4",
