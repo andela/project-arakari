@@ -2,10 +2,14 @@
   "name": "mean",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "~3.0.0",
-    "angular-bootstrap": "~0.4.0",
+    "angular-mocks": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-bootstrap": "~0.4.0",    
     "angular-ui-utils": "0.0.4",
-    "jquery": "~1.9.1",
+    "angular-resource": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "bootstrap": "~3.0.0",         
+    "jquery": "~1.9.1",   
     "underscore": "~1.5.2"
   },
   "exportsOverride": {
@@ -17,5 +21,20 @@
     "angular-ui-utils": {
       "modules": "modules/route/route.js"
     }
-  }
+  },
+  "homepage": "https://github.com/andela/project-arakari",
+  "authors": [
+    "Jimnah Magira <jimnah.magira@andela.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
