@@ -108,7 +108,5 @@ module.exports = function(app, passport, auth) {
         res.status(200);
         res.json({ msg: 'welcome to the landing page' });
     });
-
-    //
-
+    
 };
