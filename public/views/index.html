@@ -12,6 +12,51 @@ $(document).ready(function() {
 
   });
 </script>
+<!-- start of inline css for blink -->
+<style type="text/css">
+     @-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+          .blinky {
+      -webkit-animation: blink 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 2s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 2s;
+    -o-animation-iteration-count: infinite;
+   }
+</style>
+<!-- end of inline css for blink -->
 
 <script></script>
 <div landing id="main-bod">
@@ -54,17 +99,27 @@ $(document).ready(function() {
     <div class="background-opacity"></div>
     <div class="container">
       <div class="row" id="main-text">
-        <div class="col-md-12" id="avatars" ng-controller="IndexController">
-          <img ng-repeat="avatar in avatars" ng-src="{{avatar}}" id="avatar-face">
+        <div class="col-md-12 alert alert-success" id="avatars" ng-controller="IndexController">
+          <marquee behavior="alternate"><img ng-repeat="avatar in avatars" ng-src="{{avatar}}" id="avatar-face"></marquee>
         </div>
+
+        <!-- start of donate dismissable alert -->
+        <div class="col-lg-12">
+          <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+             <h2><i class="fa fa-info-circle fa-spin"></i> A Game for Horrible People <span id="third-word">Desperately</span> Trying to do Good. <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#register">Sign Up</a> to explore more!</h2> 
+          </div>
+        </div>
+        <!-- end of donate dismissable alert -->
+
         <!-- Teaser Slogan Start -->
-        <div class="wpb-slogan">
+        <!--<div class="wpb-slogan">
           <h2>A Game for Horrible People <span id="third-word">Desperately</span> Trying to do Good</h2>
-        </div>
+        </div>-->
         <!-- Teaser Slogan End -->
 
       <!-- Teaser Text Start -->
-      <div class="wpb-text">
+      <!--<div class="wpb-text">
         <h3 id="slogan">What is Cards for Humanity?</h3>
         <p>
           Cards for Humanity is a fast-paced online version of the popular card game, <a href="http://cardsagainsthumanity.com/" target="_blank">Cards Against Humanity</a>, that gives you the opportunity to donate to children in need - all while remaining as despicable and awkward as you naturally are.
@@ -72,6 +127,70 @@ $(document).ready(function() {
         <p>
           <span id="warning-word">Warning!</span>  This game contains offensive, profane, explicit content created by <a href="http://cardsagainsthumanity.com/" target="_blank">Cards Against Humanity</a> and provided here, uncensored and complete, in digital form. Human Resources made us say that.
         </p>
+      </div>-->
+
+      <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-check"></i> What is Cards for Humanity?</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+          Cards for Humanity is a fast-paced online version of the popular card game, <a href="http://cardsagainsthumanity.com/" target="_blank">Cards Against Humanity</a>,... <a href="#" data-toggle="modal" data-target="#rm1" class="btn btn-success">Read More</a><!--that gives you the opportunity to donate to children in need - all while remaining as despicable and awkward as you naturally are.-->
+        </p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-warning"></i> Warning!</h3>
+          </div>
+          <div class="panel-body">
+            This game contains offensive, profane, explicit content created by <a href="http://cardsagainsthumanity.com/" target="_blank">Cards Against Humanity</a>... <a href="#" data-toggle="modal" data-target="#rm2" class="btn btn-success">Read More</a> <!--and provided here, uncensored and complete, in digital form. Human Resources made us say that.-->
+          </div>
+        </div>
+        </div>
+      </div>
+      <h3 style="margin-left: 450px; background: transparent;color:white"><marquee scrollamount="5" width="40">&lt;&lt;&lt;</marquee>How To Play<marquee scrollamount="5" direction="right" width="40">&gt;&gt;&gt;</marquee></h3>
+      <div class="col-md-12">
+        <div class="panel-info">
+        <!--<div class="panel-heading"><h3 class="panel-title">HOW TO PLAY</h3></div><br>-->
+          <div class="col-md-3">
+            <div class="alert alert-success">
+            <div class="panel-body">
+            <p>1.Each player begins with, and will always have, 10 white answer cards.<br><br></p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="alert alert-success">
+            <div class="panel-body">
+            <p>2.For each round, one player is randomly chosen as the Card Czar.<br><br> </p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="alert alert-success">
+            <div class="panel-body">
+            <p>3.Everyone else answers the black question card by clicking on the answer card they want to use.</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="alert alert-success">
+            <div class="panel-body">
+            <p>4.The Card Czar then picks a favorite answer, and whoever played that answer wins the round.</p>
+            </div>
+          </div>
+          </div>
+
+        </div>
       </div>
       <!-- Teaser Text End -->
       <span id='send-link' ng-show="showOptions"> *To send a private link to your friends, sign up! </span>
@@ -255,3 +374,158 @@ $(document).ready(function() {
 </section>
 <!-- Footer End -->
 </div>
+<!-- start of read more 1 -->
+        <div class="modal fade" id="rm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 50px">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3><i class="fa fa-check"></i> What is Cards for Humanity?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                    Cards for Humanity is a fast-paced online version of the popular card game, <a href="http://cardsagainsthumanity.com/" target="_blank">Cards Against Humanity</a> that gives you the opportunity to donate to children in need - all while remaining as despicable and awkward as you naturally are.
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                  </div>
+                </div>
+            </div>
+</div>
+        <!-- end of read more 1 -->
+
+<!-- start of read more 2 -->
+        <div class="modal fade" id="rm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 50px">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3><i class="fa fa-warning"></i> Warning!</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>This game contains offensive, profane, explicit content created by <a href="http://cardsagainsthumanity.com/" target="_blank">Cards Against Humanity</a> and provided here, uncensored and complete, in digital form. Human Resources made us say that.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                  </div>
+                </div>
+            </div>
+</div>
+<!-- end of read more 2 -->
+
+<!-- start of read more 2 -->
+        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 50px">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3><i class="fa fa-pencil"></i> Sign Up</h3>
+                    </div>
+                    <div class="modal-body">
+                    <div id="main-bodn">
+<!-- Landing Start -->
+<div class="wpb-teaser parallax-background" id="homer">
+  <div class="background-opacity"></div> 
+  <div class="modified-container">
+    <div class="row" id="main-text"> 
+    <!-- Teaser Text Start -->
+    <div id="landing-logo">
+      <h2 id="slogan">Sign Up with:</h2>
+      <div id="login-buttons">
+        <a href="/auth/facebook"><img class="login-item" src="/img/icons/facebook.png"></a>
+        <a href="/auth/github"><img class="login-item" src="/img/icons/github.png"></a>
+        <a href="/auth/twitter"><img class="login-item" src="/img/icons/twitter.png"></a>
+        <a href="/auth/google"><img class="login-item" src="/img/icons/google.png"></a>
+      </div>
+      <p id="create">Or create a username/password and select an avatar:</p>
+
+      <div class="sign-body">
+        <div class="more-sign">
+          <form class="signup form-horizontal" action="/users" method="post">
+            <div class="control-group">
+              <label for="name" class="control-label"></label>
+              <div class="controls">
+                <input class="input-info" id="name" type="text" name="name" placeholder="Full name" required novalidate />
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="email" class="control-label"></label>
+              <div class="controls">
+                <input class="input-info" id="email" type="email" name="email" placeholder="Email" required novalidate />
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="password" class="control-label"></label>
+              <div class="controls">
+                <input class="input-info" id="password" type="password" name="password" placeholder="Password" required novalidate />
+              </div>
+            </div>
+            <div id="contain-avatars">
+              <ul ng-controller="IndexController" class="avatar-list">
+                <li ng-repeat="avatar in avatars" class="avatars ng-scope">
+                  <input name="avatar" type='radio' value="{{$index}}">
+                    <img ng-src="{{avatar}}">
+                  </input>
+                </li>
+              </ul>
+            </div>
+            <div class="form-actions">
+              <button id="sign-up-btn-other" type='submit'>Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+</div>
+  </div>
+</div>
+</div>
+<!-- end of read more 2 -->
+<div class="container" id="info-box">
+  <!-- Donation Modal Start -->
+  <div class="modal fade" id="donateModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 90px">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><i class="fa fa-money"></i> CHARITY</h4>
+        </div>
+        <div class="modal-body alert alert-success" >
+        <b><p> "If you don't give back, no one will like you&trade; - <a href="http://www.crowdrise.com/cfhio/fundraiser/cards4humanity">crowdrise.com"</a>
+          </p></b>
+        <p>We're quite sure you feel the same way, so we've integrated donation widgets (via crowdrise.com), along with some not-so-subtle reminders throughout the game to give you the opportunity to donate. If you're signed in when you donate, we'll even upgrade your account and place a crown on your avatar's head (to remind other players how much better you are than them).
+All donations go to the Make-a-Wish Foundation and benefit children in need.</p>
+<a href="http://www.wish.org"><img class="blinky" style="margin-left: 170px"  src="img/make-a-wish-logo-white-large.png" id="wish"/></a>
+
+<!-- Donation Modal End -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Got It</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<script type="text/javascript">
+    $(window).load(function()
+{
+    $('#donateModal').modal('show');
+});
+</script>
+
