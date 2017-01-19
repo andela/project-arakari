@@ -11,7 +11,7 @@ module.exports = function(app, passport, auth) {
     app.post('/api/auth/signin', users.login);
 
     // Search all current users
-    app.get('/api/search/users', users.authToken, users.searchUsers);
+    app.post('/api/search/users', users.authToken, users.searchUsers);
 
     //Setting up the users api
     app.post('/users', users.create);

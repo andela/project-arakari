@@ -300,15 +300,13 @@ exports.authToken = function(req, res, next) {
     }
 };
 
-// Queries all the users in the system
+/**
+ * Search current users by username
+ */ 
 exports.searchUsers = function(req, res) {
-  User.find({}, function(err, users) {
-    var allUsers = {};
-
-    users.forEach(function(user) {
-      allUsers[user._id] = user;
-    });
-
-    res.send(allUsers);
+  User.find({
+    name: new RegExp(req.query.username, 'i')
+  }, function(err, users) {
+    res.send(users);
   });
 };
