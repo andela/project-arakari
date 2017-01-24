@@ -18,6 +18,9 @@ var gulp = require('gulp'),
     bundle = require('gulp-bundle-assets'),
     livereload = require('gulp-livereload');
 
+// set up environment variables
+require('dotenv').config();
+
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
 var browserSync = require("browser-sync").create();
 
