@@ -15,12 +15,13 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
     bower = require('gulp-bower'),
+    bundle = require('gulp-bundle-assets'),
     livereload = require('gulp-livereload');
 
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
 var browserSync = require("browser-sync").create();
 
-gulp.task("default", [ 'start' ,'sass','css' , 'watch','bower']);
+gulp.task("default", [ 'start' ,'sass','css' , 'bundle', 'watch','bower']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -64,6 +65,13 @@ gulp.task('start', function () {
   , ext: 'js html'
   , env: { 'NODE_ENV': 'development' }
   }) 
+})
+
+gulp.task('bundle', function () {
+  return gulp.src('./bundle.config.js')
+    .pipe(bundle())
+    .pipe(bundle.results('./')) // param is destination of bundle.result.json
+    .pipe(gulp.dest('./public/bundle'))
 })
 
 // install task 
