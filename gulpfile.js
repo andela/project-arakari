@@ -72,14 +72,6 @@ gulp.task('bundle', function () {
     .pipe(bundle.results('./')) // param is destination of bundle.result.json
     .pipe(gulp.dest('./public/bundle'))
 })
-
-gulp.task('bundle', function() {
-    return gulp.src('./bundle.config.js')
-        .pipe(bundle())
-        .pipe(bundle.results('./')) // param is destination of bundle.result.json
-        .pipe(gulp.dest('./public/bundle'));
-});
-
 // install task 
 gulp.task('install', ['bower']);
 // test task
