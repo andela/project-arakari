@@ -8,7 +8,6 @@
 * Note: These libraries can be installed via node package manager.
 */
 
-
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     mocha = require('gulp-mocha'),
@@ -17,9 +16,6 @@ var gulp = require('gulp'),
     bower = require('gulp-bower'),
     bundle = require('gulp-bundle-assets'),
     livereload = require('gulp-livereload');
-
-// set up environment variables
-require('dotenv').config();
 
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
 var browserSync = require("browser-sync").create();
@@ -61,7 +57,7 @@ gulp.task('pre-test', () => gulp.src(['test/**/*.js'])
   .pipe(istanbul({ includeUntested: true }))
   .pipe(istanbul.hookRequire()));
 
-gulp.task('mochaTest', ['pre-test'], () => gulp.src(['./test/**/*.js'],
+gulp.task('mocha', ['pre-test'], () => gulp.src(['./test/**/*.js'],
   {
     read: false
   })
