@@ -8,25 +8,27 @@ $mq-desktop: 1100px !default;
 $mq-custom-wide : 1200px !default;
 
 $color-background: #fff;
+$color-back: #d16200;
+$color-grad: #0b394e;
 
 @mixin gradient-bg {
 /* IE10 Consumer Preview */
-  background-image: -ms-linear-gradient(top left, #ffffff 0%, #d16200 100%);
+  background-image: -ms-linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Mozilla Firefox */
-  background-image: -moz-linear-gradient(top left, #ffffff 0%, #d16200 100%);
+  background-image: -moz-linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Opera */
-  background-image: -o-linear-gradient(top left, #ffffff 0%, #d16200 100%);
+  background-image: -o-linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Webkit (Safari/Chrome 10) */
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #0b394e), color-stop(1, #d16200));
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
 
 /* Webkit (Chrome 11+) */
-  background-image: -webkit-linear-gradient(top left, #ffffff 0%, #d16200 100%);
+  background-image: -webkit-linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* W3C Markup, IE10 Release Preview */
-  background-image: linear-gradient(to bottom right, #ffffff 0%, #d16200 100%);
+  background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
 }
 
 // Both portrait and landscape
