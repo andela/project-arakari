@@ -10,6 +10,9 @@ module.exports = function(app, passport, auth) {
     app.post('/api/auth/signup', users.register);
     app.post('/api/auth/signin', users.login);
 
+    // Search all current users
+    app.get('/api/search/users', users.authToken, users.searchUsers);
+
     //Setting up the users api
     app.post('/users', users.create);
     app.post('/users/avatars', users.avatars);
@@ -105,5 +108,5 @@ module.exports = function(app, passport, auth) {
         res.status(200);
         res.json({ msg: 'welcome to the landing page' });
     });
-
+    
 };
