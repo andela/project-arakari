@@ -54,10 +54,26 @@ gulp.task('bower', function(){
 });
 
 // mocha test
-gulp.task('mocha', function (){
-  gulp.src('test/**/*.js' )
-  .pipe(mocha({reporter: 'spec'}))
-});
+gulp.task('pre-test', () => gulp.src(['test/**/*.js'])
+  .pipe(istanbul({ includeUntested: true }))
+  .pipe(istanbul.hookRequire()));
+
+gulp.task('mochaTest', ['pre-test'], () => gulp.src(['./test/**/*.js'],
+  {
+    read: false
+  })
+  .pipe(mocha({ reporter: 'spec' }))
+  .pipe(istanbul.writeReports({
+    dir: './coverage',
+    reporters: ['lcov'],
+    reportOpts: { dir: './coverage' },
+  }))
+  .once('error', () => {
+    process.exit(1);
+  })
+  .once('end', () => {
+    process.exit();
+  }));
 
 gulp.task('start', function () {
   nodemon({
