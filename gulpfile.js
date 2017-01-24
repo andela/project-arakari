@@ -15,22 +15,23 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
     bower = require('gulp-bower'),
+    bundle = require('gulp-bundle-assets'),
     livereload = require('gulp-livereload');
 
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
 var browserSync = require("browser-sync").create();
 
-gulp.task("default", [ 'start' ,'sass','css' , 'watch','bower']);
+gulp.task("default", [ 'start' ,'sass', 'css', 'bundle', 'watch', 'bower'])
 
 // monitors files for changes and reloads web browser
-gulp.task('css', function() {
+gulp.task('css', function () {
   gulp.src('public/css/*.css')
     .pipe(cleanCSS())
     .pipe(gulp.dest('css'))
-    .pipe(livereload("./public/views"));
-});
+    .pipe(livereload("./public/views"))
+})
 
-gulp.task('watch', function(){
+gulp.task('watch', function () {
   gulp.watch('public/css/common.scss', ['sass']);
   gulp.watch('public/css/**', browserSync.reload);
   gulp.watch('public/css/*.css', ['css']);
@@ -47,13 +48,13 @@ gulp.task('sass', function () {
 });
 
 // bower task
-gulp.task('bower', function(){
+gulp.task('bower', function () {
   bower()
   .pipe(gulp.dest('./public/lib/'))
 });
 
 // mocha test
-gulp.task('mocha', function (){
+gulp.task('mocha', function () {
   gulp.src('test/**/*.js' )
   .pipe(mocha({reporter: 'spec'}))
 });
@@ -62,10 +63,15 @@ gulp.task('start', function () {
   nodemon({
     script: 'server.js'
   , ext: 'js html'
-  , env: { 'NODE_ENV': 'development' }
-  }) 
+  , env: {'NODE_ENV': 'development'}}) 
 })
 
+gulp.task('bundle', function () {
+  return gulp.src('./bundle.config.js')
+    .pipe(bundle())
+    .pipe(bundle.results('./')) // param is destination of bundle.result.json
+    .pipe(gulp.dest('./public/bundle'))
+})
 // install task 
 gulp.task('install', ['bower']);
 // test task
