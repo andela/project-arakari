@@ -304,9 +304,13 @@ exports.authToken = function(req, res, next) {
  * Search current users by username
  */ 
 exports.searchUsers = function(req, res) {
-  User.find({
+  User
+    .find({
     name: new RegExp(req.query.username, 'i')
-  }, function(err, users) {
+  })
+    // removes field hashed_password from results
+    .select('-hashed_password')
+    .exec(function(err, users) {
     if (err) return next(err);
     res.send(users);
   });
