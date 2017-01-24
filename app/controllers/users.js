@@ -307,6 +307,7 @@ exports.searchUsers = function(req, res) {
   User.find({
     name: new RegExp(req.query.username, 'i')
   }, function(err, users) {
+    if (err) return next(err);
     res.send(users);
   });
 };
