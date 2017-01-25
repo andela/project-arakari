@@ -102,6 +102,5 @@ module.exports = function(app, passport, auth) {
             error: 'Not found'
         });
     });
-
-    
+ 
 };
