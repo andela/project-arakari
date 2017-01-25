@@ -55,10 +55,15 @@ gulp.task('bower', function(){
 
 // mocha test
 gulp.task('mocha', function () {
-    return gulp.src(['./test/**/*.js'], { read: false })
-        .pipe(mocha({ reporter: 'spec' }))
-        .on('error', util.log);
-});
+  gulp.src(['./test/**/*.js'], { read: false })
+    .pipe(mocha({ reporter: 'spec' }))
+      .once('error', () => {
+        process.exit();
+        })
+        .once('end', () => {
+          process.exit();
+        })
+})
 // gulp.task('pre-test', () => gulp.src(['test/**/*.js'])
 //   .pipe(istanbul({ includeUntested: true }))
 //   .pipe(istanbul.hookRequire()));
@@ -73,12 +78,12 @@ gulp.task('mocha', function () {
 //     reporters: ['lcov'],
 //     reportOpts: { dir: './coverage' },
 //   }))
-//   .once('error', () => {
-//     process.exit(1);
-//   })
-//   .once('end', () => {
-//     process.exit();
-//   }));
+  // .once('error', () => {
+  //   process.exit(1);
+  // })
+  // .once('end', () => {
+  //   process.exit();
+  // }));
 
 gulp.task('start', function () {
   nodemon({
