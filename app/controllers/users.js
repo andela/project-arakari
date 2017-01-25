@@ -312,6 +312,10 @@ exports.searchUsers = function(req, res) {
     .select('-hashed_password')
     .exec(function(err, users) {
     if (err) return next(err);
-    res.send(users);
+    if (users.length === 0) {
+        res.send('User Not Found');
+    } else {
+        res.send(users);
+    }
   });
 };
