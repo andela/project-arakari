@@ -306,7 +306,7 @@ exports.authToken = function(req, res, next) {
 exports.searchUsers = function(req, res) {
   User
     .find({
-    name: new RegExp(req.query.username, 'i')
+    name: new RegExp(req.query.name, 'i')
   })
     // removes field hashed_password from results
     .select('-hashed_password')
