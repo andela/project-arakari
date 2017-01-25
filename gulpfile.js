@@ -15,8 +15,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     bower = require('gulp-bower'),
     bundle = require('gulp-bundle-assets'),
-    livereload = require('gulp-livereload'),
-    util = require('gulp-util');
+    livereload = require('gulp-livereload');
 
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
 var browserSync = require("browser-sync").create();
@@ -64,26 +63,6 @@ gulp.task('mocha', function () {
           process.exit();
         })
 })
-// gulp.task('pre-test', () => gulp.src(['test/**/*.js'])
-//   .pipe(istanbul({ includeUntested: true }))
-//   .pipe(istanbul.hookRequire()));
-
-// gulp.task('mocha', ['pre-test'], () => gulp.src(['./test/**/*.js'],
-//   {
-//     read: false
-//   })
-//   .pipe(mocha({ reporter: 'spec' }))
-//   .pipe(istanbul.writeReports({
-//     dir: './coverage',
-//     reporters: ['lcov'],
-//     reportOpts: { dir: './coverage' },
-//   }))
-  // .once('error', () => {
-  //   process.exit(1);
-  // })
-  // .once('end', () => {
-  //   process.exit();
-  // }));
 
 gulp.task('start', function () {
   nodemon({
