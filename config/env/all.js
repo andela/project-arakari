@@ -3,7 +3,7 @@ var path = require('path'),
 var keys = rootPath + '/keys.txt';
 
 module.exports = {
-    secret: process.env.secret,
+    secret: process.env.SECRET,
     root: rootPath,
     port: process.env.PORT || 3001,
     db: process.env.MONGOHQ_URL
