@@ -13,7 +13,7 @@ module.exports = function(app, passport, auth) {
     // Search all current users
     app.get('/api/search/users', users.authToken, users.searchUsers);
 
-    //Setting up the users api
+    // Setting up the users api
     app.post('/users', users.create);
     app.post('/users/avatars', users.avatars);
 
@@ -71,6 +71,11 @@ module.exports = function(app, passport, auth) {
 
     //Finish with setting up the userId param
     app.param('userId', users.user);
+
+    // Game routes
+    var game = require('../app/controllers/game');
+    app.get('/api/games/:id/start', users.authToken, game.start);
+
 
     // Answer Routes
     var answers = require('../app/controllers/answers');
