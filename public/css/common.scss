@@ -16,19 +16,19 @@ $color-grad: #0b394e;
   background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Mozilla Firefox */
-  background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+  /*background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);*/
 
 /* Opera */
-  background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+  /*background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);*/
 
 /* Webkit (Safari/Chrome 10) */
-  background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
+  /*background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));*/
 
 /* Webkit (Chrome 11+) */
-  background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+  /*background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);*/
 
 /* W3C Markup, IE10 Release Preview */
-  background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
+  /*background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);*/
 }
 
 // Both portrait and landscape
@@ -385,10 +385,10 @@ $color-grad: #0b394e;
 }
 
 html, body, .main-container, .cont, #first-section, #inner-container{
+  background: url("img/cfh.png") no-repeat fixed;
   height: 100%;
-  width: 100%;
   margin: 0;
-  background: url("img/cfh.png") no-repeat fixed ;
+  width: 100%;
 }
 
 html{
@@ -410,8 +410,8 @@ html{
     }
 }
 body{
-  font-family: $main-font;
   background: transparent;
+  font-family: $main-font;
   margin: 0;
 
     @include tablet-portrait-only{
