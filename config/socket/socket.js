@@ -3,6 +3,7 @@ var Player = require('./player');
 require("console-stamp")(console, "m/dd HH:MM:ss");
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Gamedb = mongoose.model('Game');
 var crypto = require('crypto');
 
 var avatars = require(__dirname + '/../../app/controllers/avatars.js').all();
