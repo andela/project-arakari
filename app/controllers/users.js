@@ -59,7 +59,7 @@ exports.login = function(req, res) {
                 email: req.body.email
             };
             res.status(200).json({
-                token: 'JWt' + generateToken(userInfo),
+                token: generateToken(userInfo),
                 user: userInfo
             })
         });
@@ -139,7 +139,7 @@ exports.register = function(req, res) {
                         email: req.body.email
                     };
                     res.status(200).json({
-                        token: 'JWT' + generateToken(userInfo),
+                        token: generateToken(userInfo),
                         user: userInfo
                     });
                 });
@@ -273,7 +273,7 @@ exports.user = function(req, res, next, id) {
 exports.authToken = function(req, res, next) {
 
     // check header or url parameters or post parameters for token
-    var token = req.body.token || req.query.token;
+    var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
     // decode token
     if (token) {
@@ -298,4 +298,24 @@ exports.authToken = function(req, res, next) {
         });
 
     }
+};
+
+/**
+ * Search current users by username
+ */ 
+exports.searchUsers = function(req, res) {
+  User
+    .find({
+    name: new RegExp(req.query.name, 'i')
+  })
+    // removes field hashed_password from results
+    .select('-hashed_password')
+    .exec(function(err, users) {
+    if (err) return next(err);
+    if (users.length === 0) {
+        res.send('User Not Found');
+    } else {
+        res.send(users);
+    }
+  });
 };
