@@ -8,7 +8,10 @@ module.exports = {
             ],
             styles: [
                 './public/css/*.css'
-            ]
+            ],
+            options: {
+                rev: false
+            }
         }
     }
 };
