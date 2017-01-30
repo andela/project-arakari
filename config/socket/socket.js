@@ -210,15 +210,14 @@ module.exports = function(io) {
    var saveGame = function(game) {
     function showPlayers(players){
       var results = []
-      for (var player in players) {
-        var result = {};
-        if(players.hasOwnProperty(player)) {
-          result['UserID'] = players[player].userID
-          result['Username'] = players[player].username;
-          result['Avatar'] = players[player].avatar
-        }
+      Object.keys(players).forEach(player => {
+        var result = {}
+        result['UserID'] = players[player].userID
+        result['Username'] = players[player].username;
+        result['Avatar'] = players[player].avatar
         results.push(result);
-      }
+
+      });
       return results;
     };
 
