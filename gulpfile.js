@@ -8,19 +8,19 @@
 * Note: These libraries can be installed via node package manager.
 */
 
-
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     mocha = require('gulp-mocha'),
     nodemon = require('gulp-nodemon'),
     sass = require('gulp-sass'),
     bower = require('gulp-bower'),
+    bundle = require('gulp-bundle-assets'),
     livereload = require('gulp-livereload');
 
  // makes browser do a full-page refresh when change is made on static files (.js,.scss,.html) 
 var browserSync = require("browser-sync").create();
 
-gulp.task("default", [ 'start' ,'sass','css' , 'watch','bower']);
+gulp.task("default", [ 'start' ,'sass','css' , 'bundle', 'watch','bower']);
 
 // monitors files for changes and reloads web browser
 gulp.task('css', function() {
@@ -53,10 +53,16 @@ gulp.task('bower', function(){
 });
 
 // mocha test
-gulp.task('mocha', function (){
-  gulp.src('test/**/*.js' )
-  .pipe(mocha({reporter: 'spec'}))
-});
+gulp.task('mocha', function () {
+  gulp.src(['./test/**/*.js'], { read: false })
+    .pipe(mocha({ reporter: 'spec' }))
+      .once('error', () => {
+        process.exit();
+        })
+        .once('end', () => {
+          process.exit();
+        })
+})
 
 gulp.task('start', function () {
   nodemon({
@@ -66,7 +72,14 @@ gulp.task('start', function () {
   }) 
 })
 
+gulp.task('bundle', function () {
+  return gulp.src('./bundle.config.js')
+    .pipe(bundle())
+    .pipe(bundle.results('./')) // param is destination of bundle.result.json
+    .pipe(gulp.dest('./public/bundle'))
+})
+
 // install task 
-gulp.task('install', ['bower']);
+gulp.task('install', ['sass', 'css', 'bundle', 'bower']);
 // test task
 gulp.task('test', ['mocha']);
