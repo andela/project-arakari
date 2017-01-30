@@ -5,7 +5,7 @@ var Game = mongoose.model('Game');
 exports.all = function(req, res) {
 	Game.find({}).exec(function(err, game) {
 		if (err) return next(err);
-		res.send(game);
+		res.json(game);
 	});
 };
 
@@ -15,6 +15,6 @@ exports.start = function(req, res) {
     })
     .exec(function(err, game) {
       if (err) return next(err);
-      res.send(game);
+      res.json(game);
     });
 };
