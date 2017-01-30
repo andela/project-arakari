@@ -80,6 +80,6 @@ gulp.task('bundle', function () {
 })
 
 // install task 
-gulp.task('install', ['default']);
+gulp.task('install', ['sass', 'css', 'bundle', 'bower']);
 // test task
 gulp.task('test', ['mocha']);
