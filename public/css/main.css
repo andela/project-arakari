@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 body {
 	font-family: 'Lato', Lato;
 	font-size: 14px;
@@ -55,6 +55,7 @@ h2 {
 h3 {
 	font-size: 20px;
 	color: #8a8e91;
+	font-weight: bold;
 }
 
 h4 {
@@ -508,6 +509,9 @@ section {
 }
 
 .btn.btn-submit:focus {
+	font-weight: bold;
+}
+.bold {
 	font-weight: bold;
 }
 
