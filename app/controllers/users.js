@@ -130,7 +130,7 @@ exports.register = function (req, res) {
         user.save(function (err) {
           if (err) {
             return res.send({
-              msg: 'An unknown error occured'
+              msg: err.errors
             });
           }
       // var userInfo = setUserInfo(req.user);
