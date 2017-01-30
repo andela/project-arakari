@@ -117,43 +117,42 @@ exports.checkAvatar = function(req, res) {
 
 };
 
-exports.register = function(req, res) {
-    if (req.body.name && req.body.password && req.body.email) {
-        User.findOne({
+exports.register = function (req, res) {
+  if (req.body.name && req.body.password && req.body.email) {
+    User.findOne({
+      email: req.body.email
+    }).exec(function(err, existingUser) {
+      if (!existingUser) {
+        var user = new User(req.body);
+        // Switch the user's avatar index to an actual avatar url
+        user.avatar = avatars[user.avatar];
+        user.provider = 'local';
+        user.save(function (err) {
+          if (err) {
+            return res.send({
+              msg: 'An unknown error occured'
+            });
+          }
+      // var userInfo = setUserInfo(req.user);
+          var userInfo = {
             email: req.body.email
-        }).exec(function(err, existingUser) {
-            if (!existingUser) {
-                var user = new User(req.body);
-                // Switch the user's avatar index to an actual avatar url
-                user.avatar = avatars[user.avatar];
-                user.provider = 'local';
-                user.save(function(err) {
-                    if (err) {
-                        return res.render('/#!/signup?error=unknown', {
-                            errors: err.errors,
-                            user: user
-                        });
-                    }
-                    //var userInfo = setUserInfo(req.user);
-                    var userInfo = {
-                        email: req.body.email
-                    };
-                    res.status(200).json({
-                        token: generateToken(userInfo),
-                        user: userInfo
-                    });
-                });
-            } else {
-                return res.send({
-                    message: 'Email exists'
-                });
-            }
+          };
+          res.status(200).json({
+            token: generateToken(userInfo),
+            user: userInfo
+          });
         });
-    } else {
+      } else {
         return res.send({
-            message: 'You have not filled some fields'
+          message: 'Email exists'
         });
-    }
+      }
+    });
+  } else {
+    return res.send({
+      message: 'You have not filled some fields'
+    });
+  }
 };
 
 /**
