@@ -74,6 +74,7 @@ module.exports = function(app, passport, auth) {
 
     // Game routes
     var game = require('../app/controllers/game');
+    app.get('/api/games', game.all);
     app.get('/api/games/:id/start', users.authToken, game.start);
 
 
