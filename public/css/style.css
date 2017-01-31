@@ -428,9 +428,10 @@
  }
 
  #team-photo {
-   max-width: 84% !important;
-   width: 84%;
-   margin: 0 8%;
+   /*max-width: 100% !important;*/
+   width: 100%;
+   margin-right: 20px;
+   /*margin: 0 8%;*/
  }
 
  #gitcat {
@@ -897,7 +898,7 @@
    z-index: 1000;
  }
 
- .wpb-contact-us .background-opacity {
+ .wpb-contact-us .ç {
    position: absolute;
    top: 0;
    left: 0;
@@ -905,7 +906,7 @@
    height: 100%;
    min-height: 100%;
    z-index:900;
-   background: #252525;
+   background: #D16200;
  }
 
 
@@ -1000,7 +1001,8 @@
 }
 
 #donations {
-   margin-top: 160px;
+   margin-top: 0px;
+   width: 100%;
 }
 
 /*MORE MEDIA QUERIESS WHOOOOOAAAA*/
@@ -1248,7 +1250,7 @@
       background: #252525;
       padding: 5px 5px 5px 13px;
       width: 100%;
-      margin: 30px auto;
+      margin: 0px auto;
    }
 
    .row {

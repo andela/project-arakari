@@ -1,4 +1,4 @@
-$main-font: "helvetica neue", helvetica, sans-serif;
+$main-font: "Lato", lato, sans-serif;
 
 $mq-mobile-portrait : 320px !default;
 $mq-mobile-landscape : 520px !default;
@@ -8,25 +8,27 @@ $mq-desktop: 1100px !default;
 $mq-custom-wide : 1200px !default;
 
 $color-background: #fff;
+$color-back: #d16200;
+$color-grad: #0b394e;
 
 @mixin gradient-bg {
 /* IE10 Consumer Preview */
-background-image: -ms-linear-gradient(top left, #0B394E 0%, #ABCE8D 100%);
+  background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Mozilla Firefox */
-background-image: -moz-linear-gradient(top left, #0B394E 0%, #ABCE8D 100%);
+  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Opera */
-background-image: -o-linear-gradient(top left, #0B394E 0%, #ABCE8D 100%);
+  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* Webkit (Safari/Chrome 10) */
-background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #0B394E), color-stop(1, #ABCE8D));
+  //background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
 
 /* Webkit (Chrome 11+) */
-background-image: -webkit-linear-gradient(top left, #0B394E 0%, #ABCE8D 100%);
+  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
 
 /* W3C Markup, IE10 Release Preview */
-background-image: linear-gradient(to bottom right, #0B394E 0%, #ABCE8D 100%);
+  //background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
 }
 
 // Both portrait and landscape
@@ -383,7 +385,10 @@ background-image: linear-gradient(to bottom right, #0B394E 0%, #ABCE8D 100%);
 }
 
 html, body, .main-container, .cont, #first-section, #inner-container{
-    height: 100%;
+  background: url("img/cfh.png") no-repeat fixed;
+  height: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 html{
@@ -405,9 +410,9 @@ html{
     }
 }
 body{
-    font-family: $main-font;
-    background: transparent;
-    margin: 10px;
+  background: transparent;
+  font-family: $main-font;
+  margin: 0;
 
     @include tablet-portrait-only{
         margin: 5px;
