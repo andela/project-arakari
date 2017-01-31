@@ -3,10 +3,17 @@ var Player = require('./player');
 require("console-stamp")(console, "m/dd HH:MM:ss");
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Gamedb = mongoose.model('Game');
+var crypto = require('crypto');
 
 var avatars = require(__dirname + '/../../app/controllers/avatars.js').all();
 // Valid characters to use to generate random private game IDs
 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+
+// Generates a randomId
+function randomId() {
+    return crypto.createHash('md5').update(Math.random().toString()).digest('hex').substring(0, 24);
+}
 
 module.exports = function(io) {
 
@@ -61,6 +68,7 @@ module.exports = function(io) {
           });
           thisGame.prepareGame();
           thisGame.sendNotification('The game has begun!');
+          saveGame(thisGame);
         }
       }
     });
@@ -166,7 +174,8 @@ module.exports = function(io) {
   var fireGame = function(player,socket) {
     var game;
     if (gamesNeedingPlayers.length <= 0) {
-      gameID += 1;
+      // assigns gameID a random number
+      gameID = randomId();
       var gameIDStr = gameID.toString();
       game = new Game(gameIDStr, io);
       allPlayers[socket.id] = true;
@@ -196,6 +205,43 @@ module.exports = function(io) {
       }
     }
   };
+
+  // saveGame function to add game data to the database
+   var saveGame = function(game) {
+    function showPlayers(players){
+      var results = []
+      Object.keys(players).forEach(player => {
+        var result = {}
+        result['UserID'] = players[player].userID
+        result['Username'] = players[player].username;
+        result['Avatar'] = players[player].avatar
+        results.push(result);
+
+      });
+      return results;
+    };
+
+    if (allGames[game.gameID]) {
+      Gamedb.findOne({
+        gameId: game.gameID
+      }).exec(function(err, existingGame) {
+        if (!existingGame) {
+          var newGame = new Gamedb({
+            gameId: game.gameID,
+            players: showPlayers(game.players),
+            gameWinner: game.gameWinner
+          })
+          newGame.save(function(err, doc) {
+          if (err) return console.log('error');
+          console.log(doc);
+        })
+      } else {
+          gameWinner = game.gameWinner;
+          players = showPlayers(game.players);
+      }
+    });
+    }
+  }
 
   var createGameWithFriends = function(player,socket) {
     var isUniqueRoom = false;
@@ -232,6 +278,24 @@ module.exports = function(io) {
         game.players.length-1 >= game.playerMinLimit) {
         game.removePlayer(socket.id);
       } else {
+        // When game is over, it updates the gameWinner to the
+        // actually winner of the game
+        Gamedb.findOne({
+          gameId: game.gameID
+        }, function(err, g) {
+          if (err) throw err;
+          console.log(g);
+
+          // assigns gameWinner variable the winner
+          g.gameWinner = game.gameWinner;
+
+          // saves the change made
+          g.save(function(err) {
+            if (err) throw err;
+            console.log('successfully updated!');
+          });
+
+        });
         game.stateDissolveGame();
         for (var j = 0; j < game.players.length; j++) {
           game.players[j].socket.leave(socket.gameID);
