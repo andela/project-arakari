@@ -133,7 +133,6 @@ exports.register = function (req, res) {
               msg: err.errors
             });
           }
-      // var userInfo = setUserInfo(req.user);
           var userInfo = {
             email: req.body.email
           };
