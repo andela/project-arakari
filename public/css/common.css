@@ -106,8 +106,6 @@ body {
     position: relative; }
     #main-container #app-container #menu-container {
       width: 100%;
-      -webkit-border-radius: 8px;
-      -moz-border-radius: 8px;
       border-radius: 8px;
       background: #000;
       margin-bottom: 10px;
@@ -126,12 +124,6 @@ body {
         @media (max-width: 520px) {
           #main-container #app-container #menu-container #logo {
             font-size: 20px; } }
-        #main-container #app-container #menu-container #logo #first-word {
-          color: #7CE4E8; }
-        #main-container #app-container #menu-container #logo #second-word {
-          color: #FFFFA5; }
-        #main-container #app-container #menu-container #logo #third-word {
-          color: #FC575E; }
       #main-container #app-container #menu-container #leave-game,
       #main-container #app-container #menu-container #leave-game a {
         display: inline-block;
@@ -153,7 +145,7 @@ body {
       #main-container #app-container #menu-container #leave-game a:hover,
       #main-container #app-container #menu-container #leave-game a:active,
       #main-container #app-container #menu-container #leave-game a:focus {
-        color: #FF8416;
+        color: #ff8416;
         background: none; }
       #main-container #app-container #menu-container #game-info,
       #main-container #app-container #menu-container #game-info a {
@@ -176,21 +168,19 @@ body {
       #main-container #app-container #menu-container #game-info a:hover,
       #main-container #app-container #menu-container #game-info a:active,
       #main-container #app-container #menu-container #game-info a:focus {
-        color: #FF8416;
+        color: #ff8416;
         background: none; }
       #main-container #app-container #menu-container .btn-custom,
       #main-container #app-container #menu-container .btn-custom:hover,
       #main-container #app-container #menu-container .btn-custom:focus,
       #main-container #app-container #menu-container .btn-custom:active {
         color: #000;
-        background: #FF8416;
+        background: #ff8416;
         outline: none; }
       #main-container #app-container #menu-container #abandon-game-button {
         display: inline-block;
         float: right;
         border-radius: 8px;
-        -moz-border-radius: 8px;
-        -webkit-border-radius: 8px;
         font-size: 20px;
         font-size: 1.25rem;
         font-weight: 400;
@@ -252,8 +242,6 @@ body {
         min-height: 60px;
         background: #000;
         margin: 0 0 2% 8%;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
         border-radius: 8px; }
         @media (max-width: 520px) {
           #main-container #app-container #social-bar-container #player-container {
@@ -281,7 +269,7 @@ body {
               position: absolute;
               max-width: 80%;
               bottom: 20px;
-              -webkit-transform: rotate(-18deg);
+              transform: rotate(-18deg);
               left: -5px; }
               @media only screen and (min-width: 521px) and (max-width: 768px) {
                 #main-container #app-container #social-bar-container #player-container #above-czar-container #avatar_ #king {
@@ -296,8 +284,6 @@ body {
               width: 75%;
               height: 70%;
               float: left;
-              -webkit-border-radius: 8px;
-              -moz-border-radius: 8px;
               border-radius: 8px;
               min-width: 25px;
               min-height: 25px; }
@@ -349,7 +335,7 @@ body {
                 font-size: 13px;
                 margin-top: 5px;
                 margin-bottom: 0;
-                color: #FF8416; }
+                color: #ff8416; }
                 @media only screen and (min-width: 521px) and (max-width: 768px) {
                   #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-score h2 {
                     font-size: 13px; } }
@@ -432,16 +418,12 @@ body {
             text-align: center;
             position: relative;
             font-weight: bold;
-            -webkit-border-radius: 8px;
-            -moz-border-radius: 8px;
             border-radius: 8px;
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
             background-color: #000;
             text-indent: 0;
             text-shadow: 1px 1px 0px #fff;
             cursor: pointer;
-            -webkit-border-radius: 8px;
-            -moz-border-radius: 8px;
             border-radius: 8px; }
             #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #menu-container #menu-button {
               position: absolute;
@@ -455,8 +437,6 @@ body {
               text-align: center;
               position: relative;
               font-weight: bold;
-              -webkit-border-radius: 8px;
-              -moz-border-radius: 8px;
               border-radius: 8px;
               filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
               background-color: #000;
@@ -470,7 +450,7 @@ body {
               min-width: 85px;
               min-height: 85px;
               height: 100%;
-              color: #FF8416; }
+              color: #ff8416; }
               #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-round, #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-czar-choosing {
                 position: absolute;
                 left: 0;
@@ -565,8 +545,6 @@ body {
                   color: #fff; }
                   #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container #start-game-button {
                     border-radius: 8px;
-                    -moz-border-radius: 5px;
-                    -webkit-border-radius: 5px;
                     font-size: 20px;
                     font-size: 1.25rem;
                     font-weight: bolder;
@@ -602,8 +580,6 @@ body {
         width: 100%;
         background: #000;
         color: white;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
         border-radius: 8px;
         text-align: center;
         padding: 15px;
@@ -644,8 +620,6 @@ body {
       #main-container #app-container #gameplay-container #game-end-container {
         width: 100%;
         background: #000;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
         border-radius: 8px;
         text-align: center;
         overflow: hidden;
@@ -719,8 +693,6 @@ body {
         color: white;
         width: 100%;
         background: #000;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
         border-radius: 8px;
         text-align: center;
         overflow: hidden;
@@ -743,8 +715,6 @@ body {
           #main-container #app-container #gameplay-container #czar-blank-container #czar-blank-inner #smaller-text {
             font-size: 18px; }
         #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container {
-          -webkit-border-radius: 8px;
-          -moz-border-radius: 8px;
           border-radius: 8px;
           background-color: #fff;
           color: black;
@@ -792,8 +762,6 @@ body {
         width: 100%;
         background: #000;
         margin-top: 11px;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
         border-radius: 8px; }
         @media (max-width: 520px) {
           #main-container #app-container #gameplay-container #cards-container {
@@ -807,8 +775,6 @@ body {
           @media (max-width: 520px) {
             #main-container #app-container #gameplay-container #cards-container #cards {
               background: #252525;
-              -webkit-border-radius: 8px;
-              -moz-border-radius: 8px;
               border-radius: 8px;
               max-height: 245px; } }
 
@@ -821,17 +787,12 @@ body {
     font-size: 15px; } }
 
 .crDonateWidget {
-  -webkit-box-shadow: 0px 0px 0px 0px transparent !important;
-  -moz-box-shadow: 0px 0px 0px 0px transparent !important;
   box-shadow: 0px 0px 0px 0px transparent !important;
-  -webkit-border-radius: 8px !important;
-  -moz-border-radius: 8px !important;
   border-radius: 8px !important; }
 
 .crDonateWidgetOuter {
   text-align: center;
   background-color: transparent !important;
-  -webkit-box-shadow: 0px 0px 0px 0px transparent !important;
   box-shadow: 0px 0px 0px 0px transparent !important;
   border: 0px solid #e6e6e6 !important;
   margin: 0px 0px !important; }
@@ -860,8 +821,6 @@ body {
   width: 80% !important;
   margin-top: 8px !important;
   background: #f4781f !important;
-  -webkit-border-radius: 8px !important;
-  -moz-border-radius: 8px !important;
   border-radius: 8px !important;
   text-transform: none !important; }
   .gradientButton .donateNow {

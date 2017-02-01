@@ -7,8 +7,13 @@ $mq-tablet-landscape : 1024px !default;
 $mq-desktop: 1100px !default;
 $mq-custom-wide : 1200px !default;
 
+$color-black: #000;
+$color-white: #fff;
+$color-mainOrange: #ff8416;
+$color-hoverOrange: #ff9c44;
+
 @mixin gradient-bg {
-  background: #000;
+  background: $color-black;
 }
 
 // Both portrait and landscape
@@ -111,39 +116,23 @@ $mq-custom-wide : 1200px !default;
 }
 
 @mixin br{
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
     border-radius: 8px;
 }
 
 @mixin br-bottom {
-    -webkit-border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
 @mixin button {
-    -moz-box-shadow: inset 0px 1px 0px 0px #fff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #fff;
-    box-shadow: inset 0px 1px 0px 0px #fff;
+    box-shadow: inset 0px 1px 0px 0px $color-white;
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fcfcfc), color-stop(1, #f0f0f0) );
     background: -moz-linear-gradient( center top, #fcfcfc 5%, #f0f0f0 100% );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
     background-color: #fcfcfc;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-topleft: 8px;
     border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topright: 8px;
     border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
     border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     border: 1px solid #dcdcdc;
@@ -158,7 +147,7 @@ $mq-custom-wide : 1200px !default;
     width: 300px;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $color-white;
     margin-top: 15px;
     cursor: pointer;
 }
@@ -175,21 +164,13 @@ $mq-custom-wide : 1200px !default;
 @mixin button-smaller {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
     background-color: white;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-topleft: 8px;
     border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topright: 8px;
     border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
     border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     display: inline-block;
-    color: #000;
+    color: $color-black;
     font-size: 39px;
     font-weight: bold;
     font-style: normal;
@@ -212,24 +193,14 @@ $mq-custom-wide : 1200px !default;
 }
 
 @mixin button-smallest {
-    -moz-box-shadow: inset 0px 1px 0px 0px #fff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #fff;
-    box-shadow: inset 0px 1px 0px 0px #fff;
+    box-shadow: inset 0px 1px 0px 0px $color-white;
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fcfcfc), color-stop(1, #f0f0f0) );
     background: -moz-linear-gradient( center top, #fcfcfc 5%, #f0f0f0 100% );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
     background-color: #fcfcfc;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-topleft: 8px;
     border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topright: 8px;
     border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
     border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     border: 1px solid #dcdcdc;
@@ -244,7 +215,7 @@ $mq-custom-wide : 1200px !default;
     width: 100px;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $color-white;
     cursor: pointer;
     margin: 5px auto;
     display: block;
@@ -264,9 +235,9 @@ $mq-custom-wide : 1200px !default;
     font-weight: bold;
     @include br;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-    background-color: #000;
+    background-color: $color-black;
     text-indent: 0;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $color-white;
     cursor: pointer;
 }
 
@@ -280,11 +251,11 @@ $mq-custom-wide : 1200px !default;
     padding: 1%;
     margin: 1%;
 
-    background-color: #fff;
+    background-color: $color-white;
 
     border-radius: 8px;
 
-    color: #000;
+    color: $color-black;
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -309,17 +280,17 @@ $mq-custom-wide : 1200px !default;
     }
 
     &.black {
-        background: #000;
-        border-color: #fff;
-        color: #fff;
+        background: $color-black;
+        border-color: $color-white;
+        color: $color-white;
     }
 
     &.longBlack {
-        background: #000;
-        border-color: #fff;
+        background: $color-black;
+        border-color: $color-white;
         border-style: solid;
         border-width: 1px;
-        color: #fff;
+        color: $color-white;
         height: 100%;
         width: 35.5em;
         padding-left: 2%;
@@ -395,13 +366,13 @@ body{
 }
 
 .navbar .nav>li>a.brand {
-    padding-left:20px;
-    margin-left:0
+    padding-left: 20px;
+    margin-left: 0;
 }
 
 .content {
-    margin-top:50px;
-    width:70%
+    margin-top: 50px;
+    width: 70%;
 }
 
 
@@ -415,10 +386,8 @@ body{
 
         #menu-container{
             width: 100%;
-            -webkit-border-radius: 8px;
-            -moz-border-radius: 8px;
             border-radius: 8px;
-            background: #000;
+            background: $color-black;
             margin-bottom: 10px;
             margin-top: 5px;
             padding: 5px;
@@ -438,18 +407,6 @@ body{
                 @include mobile-only{
                     font-size: 20px;
                 }
-
-                #first-word{
-                    color: #7CE4E8;
-                }
-
-                #second-word{
-                    color: #FFFFA5;
-                }
-
-                #third-word{
-                    color: #FC575E;
-                }
             }
 
             #leave-game,
@@ -457,7 +414,7 @@ body{
               display: inline-block;
               float:right;
               font-size: 20px;
-              color: #fff;
+              color: $color-white;
               width: 75px;
               cursor: pointer;
               text-align: center;
@@ -475,7 +432,7 @@ body{
             #leave-game a:hover,
             #leave-game a:active,
             #leave-game a:focus{
-               color: #FF8416;
+               color: $color-mainOrange;
                background: none;
             }
 
@@ -484,7 +441,7 @@ body{
               display: inline-block;
               float:right;
               font-size: 20px;
-              color: #fff;
+              color: $color-white;
               width: 75px;
               cursor: pointer;
               text-align: center;
@@ -502,7 +459,7 @@ body{
             #game-info a:hover,
             #game-info a:active,
             #game-info a:focus{
-               color: #FF8416;
+               color: $color-mainOrange;
                background: none;
             }
 
@@ -510,8 +467,8 @@ body{
             .btn-custom:hover,
             .btn-custom:focus,
             .btn-custom:active {
-              color: #000;
-              background: #FF8416;
+              color: $color-black;
+              background: $color-mainOrange;
               outline: none;
             }
 
@@ -519,8 +476,6 @@ body{
                 display: inline-block;
                 float:right;
                 border-radius: 8px;
-                -moz-border-radius: 8px;
-                -webkit-border-radius: 8px;
                 font-size: 20px;
                 font-size: 1.25rem;
                 font-weight: 400;
@@ -597,7 +552,7 @@ body{
                 height: 9%;
                 position: relative;
                 min-height: 60px;
-                background: #000;
+                background: $color-black;
                 margin: 0 0 2% 8%;
                 @include br;
 
@@ -631,7 +586,7 @@ body{
                            position: absolute;
                            max-width: 80%;
                            bottom: 20px;
-                           -webkit-transform: rotate(-18deg);
+                           transform: rotate(-18deg);
                            left: -5px;
 
                            @include tablet-portrait-only {
@@ -694,7 +649,7 @@ body{
                             h4{
                                 font-family: 'Lato', sans-serif;
                                 margin-bottom: 0px;
-                                color: #fff;
+                                color: $color-white;
                                 font-size: 13px;
                             }
                             h4{
@@ -719,7 +674,7 @@ body{
                                 font-size: 13px;
                                 margin-top: 5px;
                                 margin-bottom: 0;
-                                color: #FF8416;
+                                color: $color-mainOrange;
 
                                 @include tablet-portrait-only{
                                     font-size: 13px;
@@ -771,7 +726,7 @@ body{
                     #the-czar{
                         font-family: 'Lato', sans-serif;
                         margin-bottom: 0px;
-                        color: #fff;
+                        color: $color-white;
                         font-size: 13px;
                         margin-right: 15px;
 
@@ -847,14 +802,14 @@ body{
                         #inner-timer-container{
                             text-align: center;
                             @include soft-button;
-                            background: #000;
+                            background: $color-black;
                             text-shadow: none;
                             cursor: default;
                             border: none;
                             min-width: 85px;
                             min-height: 85px;
                             height: 100%;
-                            color: #FF8416;
+                            color: $color-mainOrange;
 
                             #timer-status-round, #timer-status-czar-choosing{
                                 position: absolute;
@@ -959,7 +914,7 @@ body{
                                 #player-count-container{
                                     #player-count{
                                         font-size: 33px;
-                                        color: #ff8416;
+                                        color: $color-mainOrange;
                                         margin-top: 10px;
 
                                         @include mobile-only{
@@ -968,7 +923,7 @@ body{
                                     }
                                     #the-word-players{
                                         font-size: 17px;
-                                        color: #ff8416;
+                                        color: $color-mainOrange;
                                     }
                                 }
 
@@ -981,18 +936,16 @@ body{
                                 }
 
                                 #start-game-container{
-                                    color: #fff;
+                                    color: $color-white;
 
                                     #start-game-button{
                                         border-radius: 8px;
-                                        -moz-border-radius: 5px;
-                                        -webkit-border-radius: 5px;
                                         font-size: 20px;
                                         font-size: 1.25rem;
                                         font-weight: bolder;
                                         font-style: italic;
-                                        color: #fff;
-                                        background: #ff8416;
+                                        color: $color-white;
+                                        background: $color-mainOrange;
                                         padding: 0.65em 20px;
                                         width: 100%;
                                         cursor: pointer;
@@ -1009,7 +962,7 @@ body{
                                     }
 
                                     #start-game-button:hover{
-                                       background: #ff9c44;
+                                       background: $color-hoverOrange;
                                     }
                                 }
                             }
@@ -1038,7 +991,7 @@ body{
             }
             #info-container{
                 width: 100%;
-                background: #000;
+                background: $color-black;
                 color: white;
                 @include br;
                 text-align: center;
@@ -1093,7 +1046,7 @@ body{
 
             #game-end-container{
                 width: 100%;
-                background: #000;
+                background: $color-black;
                 @include br;
                 text-align: center;
                 overflow: hidden;
@@ -1152,7 +1105,7 @@ body{
                             width: 40%;
                             font-size: 16px;
                             padding-top: 5%;
-                            color: #ff8416;
+                            color: $color-mainOrange;
                             font-weight: bold;
                             font-family: 'Lato', sans-serif;
                             text-decoration: none;
@@ -1162,7 +1115,7 @@ body{
 
                              &:hover{
                                 background: none;
-                                color: #ff9c44;
+                                color: $color-hoverOrange;
                             }
                         }
 
@@ -1170,7 +1123,7 @@ body{
                             width: 40%;
                             font-size: 16px;
                             padding-top: 5%;
-                            color: #ff8416;
+                            color: $color-mainOrange;
                             font-weight: bold;
                             font-family: 'Lato', sans-serif;
                             text-decoration: none;
@@ -1180,7 +1133,7 @@ body{
 
                              &:hover{
                                 background: none;
-                                color: #ff9c44;
+                                color: $color-hoverOrange;
                             }
                         }
 
@@ -1191,7 +1144,7 @@ body{
             #czar-blank-container{
                 color: white;
                 width: 100%;
-                background: #000;
+                background: $color-black;
                 @include br;
                 text-align: center;
                 overflow: hidden;
@@ -1221,7 +1174,7 @@ body{
 
                 #charity-fact-container{
                     @include br;
-                    background-color: #fff;
+                    background-color: $color-white;
                     color: black;
 
                     position: absolute;
@@ -1237,7 +1190,7 @@ body{
                     }
 
                     #charity-fact-tagline{
-                        color: #000;
+                        color: $color-black;
                         font-family: 'Lato', sans-serif;
                         font-size: 22px;
                         margin-bottom: 3px;
@@ -1283,7 +1236,7 @@ body{
 
             #cards-container{
                 width: 100%;
-                background: #000;
+                background: $color-black;
                 margin-top: 11px;
                 @include br;
 
@@ -1300,8 +1253,6 @@ body{
 
                     @include mobile-only{
                         background: #252525;
-                        -webkit-border-radius: 8px;
-                        -moz-border-radius: 8px;
                         border-radius: 8px;
                         max-height: 245px;
                     }
@@ -1325,18 +1276,13 @@ body{
 
 //Attempt to Modify our Charity Banner
 .crDonateWidget {
-    -webkit-box-shadow: 0px 0px 0px 0px transparent !important;
-    -moz-box-shadow: 0px 0px 0px 0px transparent !important;
     box-shadow: 0px 0px 0px 0px transparent !important;
-    -webkit-border-radius: 8px !important;
-    -moz-border-radius: 8px !important;
     border-radius: 8px !important;
 }
 
 .crDonateWidgetOuter {
     text-align: center;
     background-color: transparent !important;
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0) !important;
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0) !important;
     border: 0px solid #e6e6e6 !important;
     margin: 0px 0px !important;
@@ -1376,8 +1322,6 @@ body{
     width: 80% !important;
     margin-top: 8px !important;
     background: rgb(244,120,31) !important;
-    -webkit-border-radius: 8px !important;
-    -moz-border-radius: 8px !important;
     border-radius: 8px !important;
     text-transform: none !important;
     .donateNow{
