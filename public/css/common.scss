@@ -1115,12 +1115,12 @@ body{
                 }
 
                 #inner-info-exit{
-                    margin-top: 20px;
-                    width: 100%;
-                    position: relative;
-                    overflow: hidden;
-                    height: 100%;
                     color: white;
+                    height: 100%;
+                    margin-top: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    width: 100%;
 
                     @include mobile-only{
                         float: none;
@@ -1150,11 +1150,9 @@ body{
 
                         #join-new-game{
                             width: 40%;
-                            margin: 5%;
-                            font-size: 21px;
+                            font-size: 16px;
                             padding-top: 5%;
                             color: #ff8416;
-                            font-size: 16px;
                             font-weight: bold;
                             font-family: 'Lato', sans-serif;
                             text-decoration: none;
@@ -1163,18 +1161,16 @@ body{
                             margin: 5px auto;
 
                              &:hover{
-                                color: #ff9c44;
                                 background: none;
+                                color: #ff9c44;
                             }
                         }
 
                         #exit-match{
                             width: 40%;
-                            margin: 5%;
-                            font-size: 21px;
+                            font-size: 16px;
                             padding-top: 5%;
                             color: #ff8416;
-                            font-size: 16px;
                             font-weight: bold;
                             font-family: 'Lato', sans-serif;
                             text-decoration: none;
@@ -1183,8 +1179,8 @@ body{
                             margin: 5px auto;
 
                              &:hover{
-                                color: #ff9c44;
                                 background: none;
+                                color: #ff9c44;
                             }
                         }
 
