@@ -704,12 +704,13 @@ body{
                         }
                     }
                     #player-container-inner{
-                        float: left;
+                        // float: left;
                         position: relative;
                         bottom: 8px;
                         left: 2px;
                         max-width: 62%;
                         overflow: hidden;
+                        text-align: center;
 
                         @include tablet-portrait-only{
                             left: 3px;
