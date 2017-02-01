@@ -7,28 +7,32 @@ $mq-tablet-landscape : 1024px !default;
 $mq-desktop: 1100px !default;
 $mq-custom-wide : 1200px !default;
 
-$color-background: #fff;
-$color-back: #d16200;
-$color-grad: #0b394e;
+// $color-background: #fff;
+// $color-back: #d16200;
+// $color-grad: #0b394e;
+
+// @mixin gradient-bg {
+// /* IE10 Consumer Preview */
+//   background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+//
+// /* Mozilla Firefox */
+//   //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+//
+// /* Opera */
+//   //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+//
+// /* Webkit (Safari/Chrome 10) */
+//   //background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
+//
+// /* Webkit (Chrome 11+) */
+//   //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
+//
+// /* W3C Markup, IE10 Release Preview */
+//   //background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
+// }
 
 @mixin gradient-bg {
-/* IE10 Consumer Preview */
-  background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* Mozilla Firefox */
-  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* Opera */
-  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* Webkit (Safari/Chrome 10) */
-  //background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
-
-/* Webkit (Chrome 11+) */
-  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* W3C Markup, IE10 Release Preview */
-  //background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
+  background: #000000;
 }
 
 // Both portrait and landscape
@@ -169,7 +173,7 @@ $color-grad: #0b394e;
     border: 1px solid #dcdcdc;
     display: inline-block;
     color: #777777;
-    font-family: arial;
+    font-family: 'Lato', sans-serif;
     font-size: 50px;
     font-weight: bold;
     font-style: normal;
@@ -255,7 +259,7 @@ $color-grad: #0b394e;
     border: 1px solid #dcdcdc;
     display: inline-block;
     color: #777777;
-    font-family: arial;
+    font-family: 'Lato', sans-serif;
     font-size: 19px;
     font-weight: bold;
     font-style: normal;
@@ -287,7 +291,7 @@ $color-grad: #0b394e;
     -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
     box-shadow: inset 0px 1px 0px 0px #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-    background-color: #D5D5D5;
+    background-color: #000000;
     text-indent: 0;
     text-shadow: 1px 1px 0px #ffffff;
     cursor: pointer;
@@ -307,8 +311,8 @@ $color-grad: #0b394e;
 
     border-radius: 8px;
 
-    color: #252525;
-    font-family: Arial;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
     font-size: 20px;
     font-weight: bold;
 
@@ -332,15 +336,17 @@ $color-grad: #0b394e;
     }
 
     &.black {
-        background: #252525;
-        border-color: white;
-        color: white;
+        background: #000000;
+        border-color: #ffffff;
+        color: #ffffff;
     }
 
     &.longBlack {
-        background: #252525;
-        border-color: white;
-        color: white;
+        background: #000000;
+        border-color: #ffffff;
++       border-style: solid;
++       border-width: 1px;
+        color: #ffffff;
         height: 100%;
         width: 35.5em;
         padding-left: 2%;
@@ -447,9 +453,9 @@ body{
             -webkit-border-radius: 8px;
             -moz-border-radius: 8px;
             border-radius: 8px;
-            background: #252525;
+            background: #000000;
             margin-bottom: 10px;
-            margin-top: 5px;
+            margin-top: 30px;
             padding: 5px;
 
             @include mobile-only{
@@ -461,7 +467,8 @@ body{
                 display: inline-block;
                 margin-left: 10px;
                 font-size: 28px;
-                font-family: 'Lobster', cursive;
+                font-family: 'Lato', sans-serif;
+                width: 100px;
 
                 @include mobile-only{
                     font-size: 20px;
@@ -479,6 +486,63 @@ body{
                     color: #FC575E;
                 }
             }
+
+            #leave-game,
++            #leave-game a {
++              display: inline-block;
++              float:right;
++              font-size: 30px;
++              color: #fff;
++              width: 75px;
++              cursor: pointer;
++              text-align: center;
++
++              @include mobile-only{
++                  font-size: 0.7rem;
++                  margin-top: 5px;
++                  margin-right: 1px;
++                  padding: 5px;
++                  width: 30px;
++              }
++            }
++
++            #leave-game:hover,
++            #leave-game a:hover{
++               color: #FF8416;
++            }
++
++            #game-info,
++            #game-info a {
++              display: inline-block;
++              float:right;
++              font-size: 30px;
++              color: #fff;
++              width: 75px;
++              cursor: pointer;
++              text-align: center;
++
++              @include mobile-only{
++                  font-size: 0.7rem;
++                  margin-top: 5px;
++                  margin-right: 1px;
++                  padding: 5px;
++                  width: 30px;
++              }
++            }
++
++            #game-info:hover,
++            #game-info a:hover {
++               color: #FF8416;
++            }
++
++            .btn-custom,
++            .btn-custom:hover,
++            .btn-custom:focus,
++            .btn-custom:active {
++              color: #000000;
++              background: #FF8416;
++              outline: none;
++            }
 
             #abandon-game-button{
                 display: inline-block;
@@ -588,11 +652,13 @@ body{
                     }
 
                     #avatar_ {
-                        height: 100%;
-                        width: 38%;
+                        // height: 100%;
+                        // width: 38%;
+                        width: 25px;
                         float: left;
                         position: relative;
                         z-index: 999;
+                        margin-right: 30px;
 
                         #king {
                            position: absolute;
@@ -659,17 +725,19 @@ body{
                         #player-name{
 
                             h4{
-                                font-family: 'Lobster', cursive;
+                                font-family: 'Lato', sans-serif;
                                 margin-bottom: 0px;
+                                color: #ffffff;
++                               font-size: 13px;
                             }
                             h4{
 
                                 @include tablet-portrait-only{
-                                    font-size: 14px;
+                                    font-size: 13px;
                                 }
 
                                 @include mobile-only{
-                                    font-family: 'Lobster', cursive;
+                                    font-family: 'Lato', sans-serif;
                                     font-size: 10px;
                                     margin-top: 3px;
                                     margin-bottom: 5px;
@@ -678,16 +746,17 @@ body{
                         }
 
                         #player-score{
-                            float: left;
+                            // float: left;
+                            text-align: center;
 
                             h2{
-
-                                font-size: 26px;
-                                margin-top: 0;
+                                font-size: 13px;
+                                margin-top: 5px;
                                 margin-bottom: 0;
+                                color: #FF8416;
 
                                 @include tablet-portrait-only{
-                                    font-size: 21px;
+                                    font-size: 13px;
                                 }
 
                                 @include mobile-only{
@@ -736,9 +805,11 @@ body{
                     }
 
                     #the-czar{
-                        color: #fff;
-                        font-weight: bold;
-                        font-size: 20px;
+                        font-family: 'Lato', sans-serif;
+                        margin-bottom: 0px;
+                        color: #ffffff;
+                        font-size: 13px;
+                        margin-right: 25px;
 
                         @include mobile-only{
                             display: none;
@@ -794,7 +865,7 @@ body{
                         display: none;
                         @include soft-button;
                         height: 20%;
-                        margin-bottom: 16px;
+                        margin-bottom: 30px;
                         line-height: 20%;
                         @include br;
 
@@ -812,14 +883,14 @@ body{
                         #inner-timer-container{
                             text-align: center;
                             @include soft-button;
-                            background: #FFF;
+                            background: #000000;
                             text-shadow: none;
                             cursor: default;
                             border: none;
                             min-width: 85px;
                             min-height: 85px;
                             height: 100%;
-                            color: #000;
+                            color: #FF8416;
 
                             #timer-status-round, #timer-status-czar-choosing{
                                 position: absolute;
@@ -839,7 +910,7 @@ body{
                             }
 
                             #time{
-                                font-family: 'Lobster', cursive;
+                                font-family: 'Lato', sans-serif;
                                 font-size: 110px;
                                 position: absolute;
                                 bottom: 25%;
@@ -1330,5 +1401,3 @@ body{
         border-top: 0px solid black !important;
     }
 }
-
-

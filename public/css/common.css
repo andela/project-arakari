@@ -8,7 +8,7 @@
   margin: 1%;
   background-color: #fff;
   border-radius: 8px;
-  color: #252525;
+  color: #000000;
   font-family: Arial;
   font-size: 20px;
   font-weight: bold;
@@ -62,23 +62,14 @@
       content: '.'; }
 
 html, body, .main-container, .cont, #first-section, #inner-container {
-  height: 100%;width: 100%;margin: 0px; }
+  background: url("img/cfh.png") no-repeat fixed;
+  height: 100%;
+  margin: 0;
+  width: 100%; }
 
 html {
- /* IE10 Consumer Preview */
-  background-image: -ms-linear-gradient(top left, #fff 0%, #D16200 100%);
-  /* Mozilla Firefox */
-  background-image: -moz-linear-gradient(top left, #fff 0%, #D16200 100%);
-  /* Opera */
-  background-image: -o-linear-gradient(top left, #fff 0%, #D16200 100%);
-  /* Webkit (Safari/Chrome 10) */
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #0B394E), color-stop(1, #ABCE8D));
-  /* Webkit (Chrome 11+) */
-  background-image: -webkit-linear-gradient(top left, #fff 0%, #D16200 100%);
-  /* W3C Markup, IE10 Release Preview */
-  background-image: linear-gradient(to bottom right, #fff 0%, #D16200 100%);
+  background: #000000;
   background-attachment: fixed;
-  width: 100%;
   background-repeat: no-repeat;
   position: relative; }
   @media (max-width: 520px) {
@@ -86,9 +77,9 @@ html {
       margin-top: 0px; } }
 
 body {
-  font-family: "helvetica neue", helvetica, sans-serif;
   background: transparent;
-  margin: 0px; }
+  font-family: "Lato", lato, sans-serif;
+  margin: 0; }
   @media only screen and (min-width: 521px) and (max-width: 768px) {
     body {
       margin: 5px; } }
@@ -392,7 +383,7 @@ body {
             -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
             box-shadow: inset 0px 1px 0px 0px #ffffff;
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-            background-color: #D5D5D5;
+            background-color: #000000;
             text-indent: 0;
             text-shadow: 1px 1px 0px #ffffff;
             cursor: pointer;
@@ -421,7 +412,7 @@ body {
               -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
               box-shadow: inset 0px 1px 0px 0px #ffffff;
               filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-              background-color: #D5D5D5;
+              background-color: #000000;
               text-indent: 0;
               text-shadow: 1px 1px 0px #ffffff;
               cursor: pointer;
@@ -583,7 +574,7 @@ body {
                 font-size: 14px; } }
           #main-container #app-container #gameplay-container #info-container #inner-info ol {
             margin-top: 10px;
-            font-family: "helvetica neue", helvetica, sans-serif;
+            font-family: "Lato", lato, sans-serif;
             text-align: left;
             font-size: 17px; }
             #main-container #app-container #gameplay-container #info-container #inner-info ol li {
