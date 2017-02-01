@@ -798,7 +798,6 @@ body{
                     width: 100%;
                     @include br-bottom;
                     background: black;
-                    opacity:0.4;
 
                     @include mobile-only{
                         overflow: auto;

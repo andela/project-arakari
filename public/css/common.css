@@ -379,8 +379,7 @@ body {
           -moz-border-radius-bottomleft: 8px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
-          background: black;
-          opacity: 0.4; }
+          background: black; }
           @media (max-width: 520px) {
             #main-container #app-container #social-bar-container #player-container #czar-container {
               overflow: auto; } }
