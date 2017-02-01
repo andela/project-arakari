@@ -9,8 +9,8 @@ $mq-custom-wide : 1200px !default;
 
 $color-black: #000;
 $color-white: #fff;
-$color-mainOrange: #ff8416;
-$color-hoverOrange: #ff9c44;
+$color-main-orange: #ff8416;
+$color-hover-orange: #ff9c44;
 
 @mixin gradient-bg {
   background: $color-black;
@@ -432,7 +432,7 @@ body{
             #leave-game a:hover,
             #leave-game a:active,
             #leave-game a:focus{
-               color: $color-mainOrange;
+               color: $color-main-orange;
                background: none;
             }
 
@@ -459,7 +459,7 @@ body{
             #game-info a:hover,
             #game-info a:active,
             #game-info a:focus{
-               color: $color-mainOrange;
+               color: $color-main-orange;
                background: none;
             }
 
@@ -468,7 +468,7 @@ body{
             .btn-custom:focus,
             .btn-custom:active {
               color: $color-black;
-              background: $color-mainOrange;
+              background: $color-main-orange;
               outline: none;
             }
 
@@ -671,10 +671,11 @@ body{
                             text-align: center;
 
                             h2{
+                                color: $color-main-orange;
                                 font-size: 13px;
-                                margin-top: 5px;
                                 margin-bottom: 0;
-                                color: $color-mainOrange;
+                                margin-top: 5px;
+
 
                                 @include tablet-portrait-only{
                                     font-size: 13px;
@@ -715,7 +716,6 @@ body{
                 #czar-container {
                     position: absolute;
                     bottom: 0;
-                    text-align: center;
                     width: 100%;
                     text-align: center;
 
@@ -724,10 +724,10 @@ body{
                     }
 
                     #the-czar{
-                        font-family: 'Lato', sans-serif;
-                        margin-bottom: 0px;
                         color: $color-white;
+                        font-family: 'Lato', sans-serif;
                         font-size: 13px;
+                        margin-bottom: 0;
                         margin-right: 15px;
 
                         @include mobile-only{
@@ -781,11 +781,11 @@ body{
                     }
 
                     #menu-container{
+                        @include soft-button;
                         display: none;
                         height: 20%;
                         line-height: 20%;
                         margin-bottom: 30px;
-                        @include soft-button;
                         @include br;
 
                         #menu-button{
@@ -809,7 +809,7 @@ body{
                             min-width: 85px;
                             min-height: 85px;
                             height: 100%;
-                            color: $color-mainOrange;
+                            color: $color-main-orange;
 
                             #timer-status-round, #timer-status-czar-choosing{
                                 position: absolute;
@@ -914,7 +914,7 @@ body{
                                 #player-count-container{
                                     #player-count{
                                         font-size: 33px;
-                                        color: $color-mainOrange;
+                                        color: $color-main-orange;
                                         margin-top: 10px;
 
                                         @include mobile-only{
@@ -923,7 +923,7 @@ body{
                                     }
                                     #the-word-players{
                                         font-size: 17px;
-                                        color: $color-mainOrange;
+                                        color: $color-main-orange;
                                     }
                                 }
 
@@ -945,7 +945,7 @@ body{
                                         font-weight: bolder;
                                         font-style: italic;
                                         color: $color-white;
-                                        background: $color-mainOrange;
+                                        background: $color-main-orange;
                                         padding: 0.65em 20px;
                                         width: 100%;
                                         cursor: pointer;
@@ -962,7 +962,7 @@ body{
                                     }
 
                                     #start-game-button:hover{
-                                       background: $color-hoverOrange;
+                                       background: $color-hover-orange;
                                     }
                                 }
                             }
@@ -1105,7 +1105,7 @@ body{
                             width: 40%;
                             font-size: 16px;
                             padding-top: 5%;
-                            color: $color-mainOrange;
+                            color: $color-main-orange;
                             font-weight: bold;
                             font-family: 'Lato', sans-serif;
                             text-decoration: none;
@@ -1115,7 +1115,7 @@ body{
 
                              &:hover{
                                 background: none;
-                                color: $color-hoverOrange;
+                                color: $color-hover-orange;
                             }
                         }
 
@@ -1123,7 +1123,7 @@ body{
                             width: 40%;
                             font-size: 16px;
                             padding-top: 5%;
-                            color: $color-mainOrange;
+                            color: $color-main-orange;
                             font-weight: bold;
                             font-family: 'Lato', sans-serif;
                             text-decoration: none;
@@ -1133,7 +1133,7 @@ body{
 
                              &:hover{
                                 background: none;
-                                color: $color-hoverOrange;
+                                color: $color-hover-orange;
                             }
                         }
 
