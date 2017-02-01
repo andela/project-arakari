@@ -794,9 +794,9 @@ body{
 
             #upper-gameplay-container {
                 height: 28%;
-                width: 95%;
-                min-height: 220px;
                 max-height: 220px;
+                min-height: 220px;
+                width: 95%;
 
                 @include mobile-only{
                     min-height: 140px;
@@ -827,10 +827,10 @@ body{
 
                     #menu-container{
                         display: none;
-                        @include soft-button;
                         height: 20%;
-                        margin-bottom: 30px;
                         line-height: 20%;
+                        margin-bottom: 30px;
+                        @include soft-button;
                         @include br;
 
                         #menu-button{
@@ -1009,7 +1009,7 @@ body{
                                     }
 
                                     #start-game-button:hover{
-                                       background:#ff9c44;
+                                       background: #ff9c44;
                                     }
                                 }
                             }
