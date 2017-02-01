@@ -189,7 +189,7 @@ $mq-custom-wide : 1200px !default;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     display: inline-block;
-    color: #252525;
+    color: #000;
     font-size: 39px;
     font-weight: bold;
     font-style: normal;
@@ -472,8 +472,11 @@ body{
             }
 
             #leave-game:hover,
-            #leave-game a:hover{
+            #leave-game a:hover,
+            #leave-game a:active,
+            #leave-game a:focus{
                color: #FF8416;
+               background: none;
             }
 
             #game-info,
@@ -496,8 +499,11 @@ body{
             }
 
             #game-info:hover,
-            #game-info a:hover {
+            #game-info a:hover,
+            #game-info a:active,
+            #game-info a:focus{
                color: #FF8416;
+               background: none;
             }
 
             .btn-custom,
@@ -1109,12 +1115,12 @@ body{
                 }
 
                 #inner-info-exit{
-                    width: 60%;
+                    margin-top: 20px;
+                    width: 100%;
                     position: relative;
                     overflow: hidden;
                     height: 100%;
                     color: white;
-                    float: left;
 
                     @include mobile-only{
                         float: none;
@@ -1143,32 +1149,42 @@ body{
                         }
 
                         #join-new-game{
-                            float: left;
-                            @include button-smaller;
                             width: 40%;
                             margin: 5%;
-                            height: 28%;
                             font-size: 21px;
-                            line-height: 155%;
                             padding-top: 5%;
+                            color: #ff8416;
+                            font-size: 16px;
+                            font-weight: bold;
+                            font-family: 'Lato', sans-serif;
+                            text-decoration: none;
+                            text-align: center;
+                            cursor: pointer;
+                            margin: 5px auto;
 
                              &:hover{
-                                @include button-hover-smaller;
+                                color: #ff9c44;
+                                background: none;
                             }
                         }
 
                         #exit-match{
-                            float: left;
-                            @include button-smaller;
                             width: 40%;
                             margin: 5%;
-                            height: 28%;
                             font-size: 21px;
-                            line-height: 155%;
                             padding-top: 5%;
+                            color: #ff8416;
+                            font-size: 16px;
+                            font-weight: bold;
+                            font-family: 'Lato', sans-serif;
+                            text-decoration: none;
+                            text-align: center;
+                            cursor: pointer;
+                            margin: 5px auto;
 
                              &:hover{
-                                @include button-hover-smaller;
+                                color: #ff9c44;
+                                background: none;
                             }
                         }
 
