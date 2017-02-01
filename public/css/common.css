@@ -9,7 +9,7 @@
   background-color: #fff;
   border-radius: 8px;
   color: #000000;
-  font-family: Arial;
+  font-family: 'Lato', sans-serif;
   font-size: 20px;
   font-weight: bold;
   vertical-align: top; }
@@ -26,13 +26,15 @@
     left: 7px;
     font-size: 18px; }
   .card.black {
-    background: #252525;
-    border-color: white;
-    color: white; }
+    background: #000000;
+    border-color: #ffffff;
+    color: #ffffff; }
   .card.longBlack {
-    background: #252525;
-    border-color: white;
-    color: white;
+    background: #000000;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
     height: 100%;
     width: 35.5em;
     padding-left: 2%;
@@ -107,9 +109,9 @@ body {
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       border-radius: 8px;
-      background: #252525;
+      background: #000000;
       margin-bottom: 10px;
-      margin-top: 5px;
+      margin-top: 30px;
       padding: 5px; }
       @media (max-width: 520px) {
         #main-container #app-container #menu-container {
@@ -119,7 +121,8 @@ body {
         display: inline-block;
         margin-left: 10px;
         font-size: 28px;
-        font-family: 'Lobster', cursive; }
+        font-family: 'Lato', sans-serif;
+        width: 100px; }
         @media (max-width: 520px) {
           #main-container #app-container #menu-container #logo {
             font-size: 20px; } }
@@ -129,6 +132,53 @@ body {
           color: #FFFFA5; }
         #main-container #app-container #menu-container #logo #third-word {
           color: #FC575E; }
+      #main-container #app-container #menu-container #leave-game,
+      #main-container #app-container #menu-container #leave-game a {
+        display: inline-block;
+        float: right;
+        font-size: 30px;
+        color: #fff;
+        width: 75px;
+        cursor: pointer;
+        text-align: center; }
+        @media (max-width: 520px) {
+          #main-container #app-container #menu-container #leave-game,
+          #main-container #app-container #menu-container #leave-game a {
+            font-size: 0.7rem;
+            margin-top: 5px;
+            margin-right: 1px;
+            padding: 5px;
+            width: 30px; } }
+      #main-container #app-container #menu-container #leave-game:hover,
+      #main-container #app-container #menu-container #leave-game a:hover {
+        color: #FF8416; }
+      #main-container #app-container #menu-container #game-info,
+      #main-container #app-container #menu-container #game-info a {
+        display: inline-block;
+        float: right;
+        font-size: 30px;
+        color: #fff;
+        width: 75px;
+        cursor: pointer;
+        text-align: center; }
+        @media (max-width: 520px) {
+          #main-container #app-container #menu-container #game-info,
+          #main-container #app-container #menu-container #game-info a {
+            font-size: 0.7rem;
+            margin-top: 5px;
+            margin-right: 1px;
+            padding: 5px;
+            width: 30px; } }
+      #main-container #app-container #menu-container #game-info:hover,
+      #main-container #app-container #menu-container #game-info a:hover {
+        color: #FF8416; }
+      #main-container #app-container #menu-container .btn-custom,
+      #main-container #app-container #menu-container .btn-custom:hover,
+      #main-container #app-container #menu-container .btn-custom:focus,
+      #main-container #app-container #menu-container .btn-custom:active {
+        color: #000000;
+        background: #FF8416;
+        outline: none; }
       #main-container #app-container #menu-container #abandon-game-button {
         display: inline-block;
         float: right;
@@ -217,11 +267,11 @@ body {
             #main-container #app-container #social-bar-container #player-container #above-czar-container {
               height: 100%; } }
           #main-container #app-container #social-bar-container #player-container #above-czar-container #avatar_ {
-            height: 100%;
-            width: 38%;
+            width: 25px;
             float: left;
             position: relative;
-            z-index: 999; }
+            z-index: 999;
+            margin-right: 30px; }
             #main-container #app-container #social-bar-container #player-container #above-czar-container #avatar_ #king {
               position: absolute;
               max-width: 80%;
@@ -275,26 +325,29 @@ body {
                 height: 100%;
                 width: 60%; } }
             #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-name h4 {
-              font-family: 'Lobster', cursive;
-              margin-bottom: 0px; }
+              font-family: 'Lato', sans-serif;
+              margin-bottom: 0px;
+              color: #ffffff;
+              font-size: 13px; }
             @media only screen and (min-width: 521px) and (max-width: 768px) {
               #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-name h4 {
-                font-size: 14px; } }
+                font-size: 13px; } }
             @media (max-width: 520px) {
               #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-name h4 {
-                font-family: 'Lobster', cursive;
+                font-family: 'Lato', sans-serif;
                 font-size: 10px;
                 margin-top: 3px;
                 margin-bottom: 5px; } }
             #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-score {
-              float: left; }
+              text-align: center; }
               #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-score h2 {
-                font-size: 26px;
-                margin-top: 0;
-                margin-bottom: 0; }
+                font-size: 13px;
+                margin-top: 5px;
+                margin-bottom: 0;
+                color: #FF8416; }
                 @media only screen and (min-width: 521px) and (max-width: 768px) {
                   #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-score h2 {
-                    font-size: 21px; } }
+                    font-size: 13px; } }
                 @media (max-width: 520px) {
                   #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-score h2 {
                     font-size: 17px;
@@ -332,9 +385,11 @@ body {
             #main-container #app-container #social-bar-container #player-container #czar-container {
               overflow: auto; } }
           #main-container #app-container #social-bar-container #player-container #czar-container #the-czar {
-            color: #fff;
-            font-weight: bold;
-            font-size: 20px; }
+            font-family: 'Lato', sans-serif;
+            margin-bottom: 0px;
+            color: #ffffff;
+            font-size: 13px;
+            margin-right: 25px; }
             @media (max-width: 520px) {
               #main-container #app-container #social-bar-container #player-container #czar-container #the-czar {
                 display: none; } }
@@ -379,16 +434,13 @@ body {
             -webkit-border-radius: 8px;
             -moz-border-radius: 8px;
             border-radius: 8px;
-            -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-            -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-            box-shadow: inset 0px 1px 0px 0px #ffffff;
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
             background-color: #000000;
             text-indent: 0;
             text-shadow: 1px 1px 0px #ffffff;
             cursor: pointer;
             height: 20%;
-            margin-bottom: 16px;
+            margin-bottom: 30px;
             line-height: 20%;
             -webkit-border-radius: 8px;
             -moz-border-radius: 8px;
@@ -408,22 +460,19 @@ body {
               -webkit-border-radius: 8px;
               -moz-border-radius: 8px;
               border-radius: 8px;
-              -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-              -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-              box-shadow: inset 0px 1px 0px 0px #ffffff;
               filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
               background-color: #000000;
               text-indent: 0;
               text-shadow: 1px 1px 0px #ffffff;
               cursor: pointer;
-              background: #FFF;
+              background: #000000;
               text-shadow: none;
               cursor: default;
               border: none;
               min-width: 85px;
               min-height: 85px;
               height: 100%;
-              color: #000; }
+              color: #FF8416; }
               #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-round, #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-czar-choosing {
                 position: absolute;
                 left: 0;
@@ -438,7 +487,7 @@ body {
                   #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-round, #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-czar-choosing {
                     font-size: 12px; } }
               #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #time {
-                font-family: 'Lobster', cursive;
+                font-family: 'Lato', sans-serif;
                 font-size: 110px;
                 position: absolute;
                 bottom: 25%;
@@ -490,35 +539,44 @@ body {
                       font-size: 21px;
                       margin-top: 0; } }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container, #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #loading-container, #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
-                  width: 33.333%;
-                  float: left;
+                  width: 100%;
+                  margin-left: auto;
+                  margin-right: auto;
                   text-align: center; }
+                #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
+                  width: 33.333%;
+                  text-align: center;
+                  margin-left: auto;
+                  margin-right: auto; }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container #player-count {
-                  font-size: 33px; }
+                  font-size: 33px;
+                  color: #FF8416;
+                  margin-top: 10px; }
                   @media (max-width: 520px) {
                     #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container #player-count {
                       font-size: 21px; } }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container #the-word-players {
-                  font-size: 17px; }
+                  font-size: 17px;
+                  color: #FF8416; }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #loading-gif {
                   margin: 20px; }
                   @media (max-width: 520px) {
                     #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #loading-gif {
                       margin-top: 5px; } }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
-                  color: #333; }
+                  color: #ffffff; }
                   #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container #start-game-button {
                     border-radius: 8px;
                     -moz-border-radius: 5px;
                     -webkit-border-radius: 5px;
                     font-size: 20px;
                     font-size: 1.25rem;
-                    font-weight: 400;
-                    color: white;
-                    background: #1F959C;
+                    font-weight: bolder;
+                    font-style: italic;
+                    color: #ffffff;
+                    background: #FF8416;
                     padding: 0.65em 20px;
-                    margin: 10px;
-                    width: 65%;
+                    width: 100%;
                     cursor: pointer; }
                     @media only screen and (min-width: 521px) and (max-width: 768px) {
                       #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container #start-game-button {
@@ -529,7 +587,7 @@ body {
                         padding: 0.65em 1px;
                         font-size: 1rem; } }
                   #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container #start-game-button:hover {
-                    background: #41C2CA; }
+                    background: #FF9C44; }
               #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #game-end-info {
                 text-align: center;
                 font-size: 16px; }
@@ -544,7 +602,7 @@ body {
                       font-size: 18px; } }
       #main-container #app-container #gameplay-container #info-container {
         width: 100%;
-        background: #252525;
+        background: #000000;
         color: white;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -552,7 +610,7 @@ body {
         text-align: center;
         padding: 15px;
         height: 50%;
-        margin-top: 10px; }
+        margin-top: 50px; }
         @media only screen and (min-width: 521px) and (max-width: 768px) {
           #main-container #app-container #gameplay-container #info-container {
             padding-top: 5px;
@@ -567,8 +625,9 @@ body {
           width: 90%;
           margin: 0 5%; }
           #main-container #app-container #gameplay-container #info-container #inner-info #lobby-how-to-play {
-            font-size: 18px;
-            margin-top: 10px; }
+            font-size: 15px;
+            margin-top: 10px;
+            text-align: center; }
             @media only screen and (min-width: 521px) and (max-width: 768px) {
               #main-container #app-container #gameplay-container #info-container #inner-info #lobby-how-to-play {
                 font-size: 14px; } }
@@ -586,14 +645,15 @@ body {
                 padding: 0px 10px 10px 10px; } }
       #main-container #app-container #gameplay-container #game-end-container {
         width: 100%;
-        background: #252525;
+        background: #000000;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
         text-align: center;
         overflow: hidden;
         height: 50%;
-        margin-top: 10px; }
+        margin-top: 10px;
+        margin-left: 50px; }
         @media (max-width: 520px) {
           #main-container #app-container #gameplay-container #game-end-container {
             height: 65%; } }
@@ -716,7 +776,7 @@ body {
       #main-container #app-container #gameplay-container #czar-blank-container {
         color: white;
         width: 100%;
-        background: #252525;
+        background: #000000;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
@@ -757,7 +817,7 @@ body {
               height: 40%;
               display: none; } }
           #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container #charity-fact-tagline {
-            font-family: 'Lobster', cursive;
+            font-family: 'Lato', sans-serif;
             font-size: 22px;
             margin-left: 2%;
             margin-bottom: 3px;
@@ -788,7 +848,7 @@ body {
                 width: 53%; } }
       #main-container #app-container #gameplay-container #cards-container {
         width: 100%;
-        background: #252525;
+        background: #000000;
         margin-top: 11px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
