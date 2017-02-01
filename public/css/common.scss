@@ -392,7 +392,7 @@ body{
             margin-top: 5px;
             padding: 5px;
 
-            @include mobile-only{
+            @include mobile-only {
                 margin-bottom: 1px;
                 margin-top: 0px;
             }
@@ -421,8 +421,8 @@ body{
 
               @include mobile-only{
                   font-size: 0.7rem;
-                  margin-top: 5px;
                   margin-right: 1px;
+                  margin-top: 5px;
                   padding: 5px;
                   width: 30px;
               }
@@ -438,18 +438,18 @@ body{
 
             #game-info,
             #game-info a {
-              display: inline-block;
-              float:right;
-              font-size: 20px;
               color: $color-white;
-              width: 75px;
               cursor: pointer;
+              display: inline-block;
+              float: right;
+              font-size: 20px;
               text-align: center;
+              width: 75px;
 
-              @include mobile-only{
+              @include mobile-only {
                   font-size: 0.7rem;
-                  margin-top: 5px;
                   margin-right: 1px;
+                  margin-top: 5px;
                   padding: 5px;
                   width: 30px;
               }
@@ -458,17 +458,17 @@ body{
             #game-info:hover,
             #game-info a:hover,
             #game-info a:active,
-            #game-info a:focus{
-               color: $color-main-orange;
+            #game-info a:focus {
                background: none;
+               color: $color-main-orange;
             }
 
             .btn-custom,
             .btn-custom:hover,
             .btn-custom:focus,
             .btn-custom:active {
-              color: $color-black;
               background: $color-main-orange;
+              color: $color-black;
               outline: none;
             }
 
@@ -549,11 +549,11 @@ body{
             }
 
             #player-container{
-                height: 9%;
-                position: relative;
-                min-height: 60px;
                 background: $color-black;
+                height: 9%;
                 margin: 0 0 2% 8%;
+                min-height: 60px;
+                position: relative;
                 @include br;
 
                 @include mobile-only{
@@ -575,12 +575,13 @@ body{
                     }
 
                     #avatar_ {
-                        width: 25px;
-                        height: 25px;
                         float: left;
-                        position: relative;
-                        z-index: 999;
+                        height: 25px;
                         margin-right: 10px;
+                        position: relative;
+                        width: 25px;
+                        z-index: 999;
+
 
                         #king {
                            position: absolute;
@@ -603,17 +604,19 @@ body{
 
 
                         img {
-                            width: 75%;
-                            height: 70%;
                             float: left;
-                            @include br;
-                            min-width: 25px;
+                            height: 70%;
                             min-height: 25px;
+                            min-width: 25px;
+                            width: 75%;
+                            @include br;
+
+
 
                             @include tablet-portrait-only{
-                                width: 75%;
                                 height: 70%;
                                 margin-left: 3px;
+                                width: 75%;
                             }
 
                             @include mobile-only{
@@ -647,10 +650,10 @@ body{
                         #player-name{
 
                             h4{
-                                font-family: 'Lato', sans-serif;
-                                margin-bottom: 0px;
                                 color: $color-white;
+                                font-family: 'Lato', sans-serif;
                                 font-size: 13px;
+                                margin-bottom: 0px;
                             }
                             h4{
 
