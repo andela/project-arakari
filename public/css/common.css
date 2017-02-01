@@ -8,7 +8,7 @@
   margin: 1%;
   background-color: #fff;
   border-radius: 8px;
-  color: #000000;
+  color: #000;
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -26,15 +26,15 @@
     left: 7px;
     font-size: 18px; }
   .card.black {
-    background: #000000;
-    border-color: #ffffff;
-    color: #ffffff; }
+    background: #000;
+    border-color: #fff;
+    color: #fff; }
   .card.longBlack {
-    background: #000000;
-    border-color: #ffffff;
+    background: #000;
+    border-color: #fff;
     border-style: solid;
     border-width: 1px;
-    color: #ffffff;
+    color: #fff;
     height: 100%;
     width: 35.5em;
     padding-left: 2%;
@@ -70,7 +70,7 @@ html, body, .main-container, .cont, #first-section, #inner-container {
   width: 100%; }
 
 html {
-  background: #000000;
+  background: #000;
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative; }
@@ -109,7 +109,7 @@ body {
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       border-radius: 8px;
-      background: #000000;
+      background: #000;
       margin-bottom: 10px;
       margin-top: 5px;
       padding: 5px; }
@@ -176,7 +176,7 @@ body {
       #main-container #app-container #menu-container .btn-custom:hover,
       #main-container #app-container #menu-container .btn-custom:focus,
       #main-container #app-container #menu-container .btn-custom:active {
-        color: #000000;
+        color: #000;
         background: #FF8416;
         outline: none; }
       #main-container #app-container #menu-container #abandon-game-button {
@@ -244,7 +244,7 @@ body {
         height: 9%;
         position: relative;
         min-height: 60px;
-        background: #000000;
+        background: #000;
         margin: 0 0 2% 8%;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -326,7 +326,7 @@ body {
             #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-name h4 {
               font-family: 'Lato', sans-serif;
               margin-bottom: 0px;
-              color: #ffffff;
+              color: #fff;
               font-size: 13px; }
             @media only screen and (min-width: 521px) and (max-width: 768px) {
               #main-container #app-container #social-bar-container #player-container #above-czar-container #player-container-inner #player-name h4 {
@@ -379,7 +379,7 @@ body {
           #main-container #app-container #social-bar-container #player-container #czar-container #the-czar {
             font-family: 'Lato', sans-serif;
             margin-bottom: 0px;
-            color: #ffffff;
+            color: #fff;
             font-size: 13px;
             margin-right: 15px; }
             @media (max-width: 520px) {
@@ -427,9 +427,9 @@ body {
             -moz-border-radius: 8px;
             border-radius: 8px;
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-            background-color: #000000;
+            background-color: #000;
             text-indent: 0;
-            text-shadow: 1px 1px 0px #ffffff;
+            text-shadow: 1px 1px 0px #fff;
             cursor: pointer;
             height: 20%;
             margin-bottom: 30px;
@@ -453,11 +453,11 @@ body {
               -moz-border-radius: 8px;
               border-radius: 8px;
               filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-              background-color: #000000;
+              background-color: #000;
               text-indent: 0;
-              text-shadow: 1px 1px 0px #ffffff;
+              text-shadow: 1px 1px 0px #fff;
               cursor: pointer;
-              background: #000000;
+              background: #000;
               text-shadow: none;
               cursor: default;
               border: none;
@@ -479,11 +479,11 @@ body {
                   #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-round, #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #timer-status-czar-choosing {
                     font-size: 12px; } }
               #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #time {
+                bottom: 25%;
                 font-family: 'Lato', sans-serif;
                 font-size: 110px;
-                position: absolute;
-                bottom: 25%;
                 left: 0;
+                position: absolute;
                 right: 0; }
                 @media only screen and (max-width: 1024px) {
                   #main-container #app-container #gameplay-container #upper-gameplay-container #menu-timeremaining-container #timer-container #inner-timer-container #time {
@@ -531,32 +531,32 @@ body {
                       font-size: 21px;
                       margin-top: 0; } }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container, #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #loading-container, #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
-                  width: 100%;
                   margin-left: auto;
                   margin-right: auto;
-                  text-align: center; }
-                #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
-                  width: 33.333%;
                   text-align: center;
+                  width: 100%; }
+                #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
                   margin-left: auto;
-                  margin-right: auto; }
+                  margin-right: auto;
+                  text-align: center;
+                  width: 33.333%; }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container #player-count {
                   font-size: 33px;
-                  color: #FF8416;
+                  color: #ff8416;
                   margin-top: 10px; }
                   @media (max-width: 520px) {
                     #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container #player-count {
                       font-size: 21px; } }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #player-count-container #the-word-players {
                   font-size: 17px;
-                  color: #FF8416; }
+                  color: #ff8416; }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #loading-gif {
                   margin: 20px; }
                   @media (max-width: 520px) {
                     #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #loading-gif {
                       margin-top: 5px; } }
                 #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container {
-                  color: #ffffff; }
+                  color: #fff; }
                   #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container #start-game-button {
                     border-radius: 8px;
                     -moz-border-radius: 5px;
@@ -565,8 +565,8 @@ body {
                     font-size: 1.25rem;
                     font-weight: bolder;
                     font-style: italic;
-                    color: #ffffff;
-                    background: #FF8416;
+                    color: #fff;
+                    background: #ff8416;
                     padding: 0.65em 20px;
                     width: 100%;
                     cursor: pointer; }
@@ -579,7 +579,7 @@ body {
                         padding: 0.65em 1px;
                         font-size: 1rem; } }
                   #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #startGame #start-game-container #start-game-button:hover {
-                    background: #FF9C44; }
+                    background: #ff9c44; }
               #main-container #app-container #gameplay-container #upper-gameplay-container #question-container-outer #question-container-inner .card #game-end-info {
                 text-align: center;
                 font-size: 16px; }
@@ -594,7 +594,7 @@ body {
                       font-size: 18px; } }
       #main-container #app-container #gameplay-container #info-container {
         width: 100%;
-        background: #000000;
+        background: #000;
         color: white;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -637,7 +637,7 @@ body {
                 padding: 0px 10px 10px 10px; } }
       #main-container #app-container #gameplay-container #game-end-container {
         width: 100%;
-        background: #000000;
+        background: #000;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
@@ -768,7 +768,7 @@ body {
       #main-container #app-container #gameplay-container #czar-blank-container {
         color: white;
         width: 100%;
-        background: #000000;
+        background: #000;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
@@ -809,11 +809,11 @@ body {
               height: 40%;
               display: none; } }
           #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container #charity-fact-tagline {
+            color: #000;
             font-family: 'Lato', sans-serif;
             font-size: 22px;
-            margin-left: 2%;
             margin-bottom: 3px;
-            color: #000; }
+            margin-left: 2%; }
             @media (max-width: 520px) {
               #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container #charity-fact-tagline {
                 font-size: 16px; } }
@@ -840,7 +840,7 @@ body {
                 width: 53%; } }
       #main-container #app-container #gameplay-container #cards-container {
         width: 100%;
-        background: #000000;
+        background: #000;
         margin-top: 11px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;

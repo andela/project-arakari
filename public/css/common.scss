@@ -7,32 +7,8 @@ $mq-tablet-landscape : 1024px !default;
 $mq-desktop: 1100px !default;
 $mq-custom-wide : 1200px !default;
 
-// $color-background: #fff;
-// $color-back: #d16200;
-// $color-grad: #0b394e;
-
-// @mixin gradient-bg {
-// /* IE10 Consumer Preview */
-//   background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-//
-// /* Mozilla Firefox */
-//   //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-//
-// /* Opera */
-//   //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-//
-// /* Webkit (Safari/Chrome 10) */
-//   //background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
-//
-// /* Webkit (Chrome 11+) */
-//   //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-//
-// /* W3C Markup, IE10 Release Preview */
-//   //background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
-// }
-
 @mixin gradient-bg {
-  background: #000000;
+  background: #000;
 }
 
 // Both portrait and landscape
@@ -150,9 +126,9 @@ $mq-custom-wide : 1200px !default;
 }
 
 @mixin button {
-    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -moz-box-shadow: inset 0px 1px 0px 0px #fff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fff;
+    box-shadow: inset 0px 1px 0px 0px #fff;
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fcfcfc), color-stop(1, #f0f0f0) );
     background: -moz-linear-gradient( center top, #fcfcfc 5%, #f0f0f0 100% );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
@@ -182,7 +158,7 @@ $mq-custom-wide : 1200px !default;
     width: 300px;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0px #ffffff;
+    text-shadow: 1px 1px 0px #fff;
     margin-top: 15px;
     cursor: pointer;
 }
@@ -236,9 +212,9 @@ $mq-custom-wide : 1200px !default;
 }
 
 @mixin button-smallest {
-    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -moz-box-shadow: inset 0px 1px 0px 0px #fff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fff;
+    box-shadow: inset 0px 1px 0px 0px #fff;
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fcfcfc), color-stop(1, #f0f0f0) );
     background: -moz-linear-gradient( center top, #fcfcfc 5%, #f0f0f0 100% );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
@@ -268,7 +244,7 @@ $mq-custom-wide : 1200px !default;
     width: 100px;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0px #ffffff;
+    text-shadow: 1px 1px 0px #fff;
     cursor: pointer;
     margin: 5px auto;
     display: block;
@@ -287,13 +263,10 @@ $mq-custom-wide : 1200px !default;
     position: relative;
     font-weight: bold;
     @include br;
-    // -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    // -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    // box-shadow: inset 0px 1px 0px 0px #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-    background-color: #000000;
+    background-color: #000;
     text-indent: 0;
-    text-shadow: 1px 1px 0px #ffffff;
+    text-shadow: 1px 1px 0px #fff;
     cursor: pointer;
 }
 
@@ -311,7 +284,7 @@ $mq-custom-wide : 1200px !default;
 
     border-radius: 8px;
 
-    color: #000000;
+    color: #000;
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -336,17 +309,17 @@ $mq-custom-wide : 1200px !default;
     }
 
     &.black {
-        background: #000000;
-        border-color: #ffffff;
-        color: #ffffff;
+        background: #000;
+        border-color: #fff;
+        color: #fff;
     }
 
     &.longBlack {
-        background: #000000;
-        border-color: #ffffff;
+        background: #000;
+        border-color: #fff;
         border-style: solid;
         border-width: 1px;
-        color: #ffffff;
+        color: #fff;
         height: 100%;
         width: 35.5em;
         padding-left: 2%;
@@ -357,7 +330,7 @@ $mq-custom-wide : 1200px !default;
         font-size: 0.750em;
 
         @include mobile-only{
-            font-size: 10px; //play with later
+            font-size: 10px;
         }
     }
 
@@ -398,20 +371,12 @@ html, body, .main-container, .cont, #first-section, #inner-container{
 }
 
 html{
-    // margin: 20px;
-    // margin-top: 5px;
-    // background: url(/img/minimal-wallpaper.jpg) no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
     @include gradient-bg;
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
 
     @include mobile-only{
-        //margin: 3px;
         margin-top: 0px;
     }
 }
@@ -453,7 +418,7 @@ body{
             -webkit-border-radius: 8px;
             -moz-border-radius: 8px;
             border-radius: 8px;
-            background: #000000;
+            background: #000;
             margin-bottom: 10px;
             margin-top: 5px;
             padding: 5px;
@@ -539,7 +504,7 @@ body{
             .btn-custom:hover,
             .btn-custom:focus,
             .btn-custom:active {
-              color: #000000;
+              color: #000;
               background: #FF8416;
               outline: none;
             }
@@ -620,16 +585,13 @@ body{
                 position: relative;
                 top: 0;
                 left: 0;
-                // background: white;
             }
 
             #player-container{
                 height: 9%;
                 position: relative;
-                // padding-top: 4%;
-                // padding-bottom: 4%;
                 min-height: 60px;
-                background: #000000;
+                background: #000;
                 margin: 0 0 2% 8%;
                 @include br;
 
@@ -652,8 +614,6 @@ body{
                     }
 
                     #avatar_ {
-                        // height: 100%;
-                        // width: 38%;
                         width: 25px;
                         height: 25px;
                         float: left;
@@ -705,7 +665,6 @@ body{
                         }
                     }
                     #player-container-inner{
-                        // float: left;
                         position: relative;
                         bottom: 8px;
                         left: 2px;
@@ -729,7 +688,7 @@ body{
                             h4{
                                 font-family: 'Lato', sans-serif;
                                 margin-bottom: 0px;
-                                color: #ffffff;
+                                color: #fff;
                                 font-size: 13px;
                             }
                             h4{
@@ -748,7 +707,6 @@ body{
                         }
 
                         #player-score{
-                            // float: left;
                             text-align: center;
 
                             h2{
@@ -798,7 +756,6 @@ body{
                     bottom: 0;
                     text-align: center;
                     width: 100%;
-                    // @include br-bottom;
                     text-align: center;
 
                     @include mobile-only{
@@ -808,7 +765,7 @@ body{
                     #the-czar{
                         font-family: 'Lato', sans-serif;
                         margin-bottom: 0px;
-                        color: #ffffff;
+                        color: #fff;
                         font-size: 13px;
                         margin-right: 15px;
 
@@ -884,7 +841,7 @@ body{
                         #inner-timer-container{
                             text-align: center;
                             @include soft-button;
-                            background: #000000;
+                            background: #000;
                             text-shadow: none;
                             cursor: default;
                             border: none;
@@ -911,11 +868,11 @@ body{
                             }
 
                             #time{
+                                bottom: 25%;
                                 font-family: 'Lato', sans-serif;
                                 font-size: 110px;
-                                position: absolute;
-                                bottom: 25%;
                                 left: 0;
+                                position: absolute;
                                 right: 0;
 
                                 @include tablet-landscape-and-below{
@@ -980,25 +937,23 @@ body{
                                 }
 
                                 #player-count-container, #loading-container, #start-game-container{
-                                    width: 100%;
                                     margin-left: auto;
                                     margin-right: auto;
-                                    // float: left;
                                     text-align: center;
+                                    width: 100%;
                                 }
 
-                                #start-game-container  {
-                                    width: 33.333%;
-                                    // float: left;
-                                    text-align: center;
+                                #start-game-container {
                                     margin-left: auto;
                                     margin-right: auto;
+                                    text-align: center;
+                                    width: 33.333%;
                                   }
 
                                 #player-count-container{
                                     #player-count{
                                         font-size: 33px;
-                                        color: #FF8416;
+                                        color: #ff8416;
                                         margin-top: 10px;
 
                                         @include mobile-only{
@@ -1007,7 +962,7 @@ body{
                                     }
                                     #the-word-players{
                                         font-size: 17px;
-                                        color: #FF8416;
+                                        color: #ff8416;
                                     }
                                 }
 
@@ -1020,7 +975,7 @@ body{
                                 }
 
                                 #start-game-container{
-                                    color: #ffffff;
+                                    color: #fff;
 
                                     #start-game-button{
                                         border-radius: 8px;
@@ -1030,10 +985,9 @@ body{
                                         font-size: 1.25rem;
                                         font-weight: bolder;
                                         font-style: italic;
-                                        color: #ffffff;
-                                        background: #FF8416;
+                                        color: #fff;
+                                        background: #ff8416;
                                         padding: 0.65em 20px;
-                                        //margin: 10px;
                                         width: 100%;
                                         cursor: pointer;
 
@@ -1049,7 +1003,7 @@ body{
                                     }
 
                                     #start-game-button:hover{
-                                       background:#FF9C44;
+                                       background:#ff9c44;
                                     }
                                 }
                             }
@@ -1078,7 +1032,7 @@ body{
             }
             #info-container{
                 width: 100%;
-                background: #000000;
+                background: #000;
                 color: white;
                 @include br;
                 text-align: center;
@@ -1133,7 +1087,7 @@ body{
 
             #game-end-container{
                 width: 100%;
-                background: #000000;
+                background: #000;
                 @include br;
                 text-align: center;
                 overflow: hidden;
@@ -1225,7 +1179,7 @@ body{
             #czar-blank-container{
                 color: white;
                 width: 100%;
-                background: #000000;
+                background: #000;
                 @include br;
                 text-align: center;
                 overflow: hidden;
@@ -1271,11 +1225,11 @@ body{
                     }
 
                     #charity-fact-tagline{
+                        color: #000;
                         font-family: 'Lato', sans-serif;
                         font-size: 22px;
-                        margin-left: 2%;
                         margin-bottom: 3px;
-                        color: #000;
+                        margin-left: 2%;
 
                         @include mobile-only{
                             font-size: 16px;
@@ -1317,7 +1271,7 @@ body{
 
             #cards-container{
                 width: 100%;
-                background: #000000;
+                background: #000;
                 margin-top: 11px;
                 @include br;
 
