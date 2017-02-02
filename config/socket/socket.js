@@ -6,7 +6,7 @@ var User = mongoose.model('User')
 var Gamedb = mongoose.model('Game')
 var crypto = require('crypto')
 
-var avatars = require(__dirname, '/../../app/controllers/avatars.js').all()
+var avatars = require(__dirname + '/../../app/controllers/avatars.js').all()
 // Valid characters to use to generate random private game IDs
 var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'
 
