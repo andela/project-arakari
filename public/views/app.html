@@ -1,18 +1,41 @@
-</script>
 <div id="app-container" ng-controller="GameController">
   <div id="menu-container">
     <div id="logo">
-      <span id="first-word">Cards</span>
-      <span id="second-word"> for</span>
-      <span id="third-word">Humanity</span>
+      <img src="../img/logo.png" alt="logo" class="img-responsive">
     </div>
-    <div id = 'abandon-game-button' ng-click="abandonGame()">
-        Abandon Game
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <div id="leave-game" ng-click="abandonGame()">
+        <a href="#" data-toggle="tooltip" data-placement="left" title="Leave Game"><i class="fa fa-times" aria-hidden="true"></i></a>
     </div>
-        <span id="tweet-container">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cfh.io" data-text="Cards for Humanity: A Game for Horrible People Desperately Trying to do Good" data-related="CFH_App">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    </span>
+      <div id="game-info">
+          <span data-toggle="modal" data-target="#infoModal">
+            <a data-toggle="tooltip" data-placement="left" title="How to Play"><i class="fa fa-info" aria-hidden="true"></i></a>
+          </span>
+      </div>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="#infoModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-title" id="infoModalLabel" style="text-align: center; font-size: 16px; font-weight: bolder">How to Play</div>
+          </div>
+          <div class="modal-body">
+            1. Each player begins with, and will always have, 10 white answer cards. <br/>
+            2. For each round, one player is randomly chosen as the Card Czar. <br/>
+            3. Everyone else answers the black question card by clicking on the answer card they want to use. <br/>
+            4. The Card Czar then picks a favorite answer, and whoever played that answer wins the round. <br/>
+          </div>
+          <div class="modal-footer">
+            <center><button type="button" class="btn btn-custom" data-dismiss="modal">Close</button></center>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div id="gameplay-container">
     <div id="upper-gameplay-container">

@@ -7,28 +7,13 @@ $mq-tablet-landscape : 1024px !default;
 $mq-desktop: 1100px !default;
 $mq-custom-wide : 1200px !default;
 
-$color-background: #fff;
-$color-back: #d16200;
-$color-grad: #0b394e;
+$color-black: #000;
+$color-white: #fff;
+$color-main-orange: #ff8416;
+$color-hover-orange: #ff9c44;
 
 @mixin gradient-bg {
-/* IE10 Consumer Preview */
-  background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* Mozilla Firefox */
-  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* Opera */
-  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* Webkit (Safari/Chrome 10) */
-  //background-image: gradient(linear, left top, right bottom, color-stop(0, $color-grad), color-stop(1, $color-back));
-
-/* Webkit (Chrome 11+) */
-  //background-image: linear-gradient(top left, $color-background 0%, $color-back 100%);
-
-/* W3C Markup, IE10 Release Preview */
-  //background-image: linear-gradient(to bottom right, $color-background 0%, $color-back 100%);
+  background: $color-black;
 }
 
 // Both portrait and landscape
@@ -131,45 +116,29 @@ $color-grad: #0b394e;
 }
 
 @mixin br{
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
     border-radius: 8px;
 }
 
 @mixin br-bottom {
-    -webkit-border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
 @mixin button {
-    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px $color-white;
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fcfcfc), color-stop(1, #f0f0f0) );
     background: -moz-linear-gradient( center top, #fcfcfc 5%, #f0f0f0 100% );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
     background-color: #fcfcfc;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-topleft: 8px;
     border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topright: 8px;
     border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
     border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     border: 1px solid #dcdcdc;
     display: inline-block;
     color: #777777;
-    font-family: arial;
+    font-family: 'Lato', sans-serif;
     font-size: 50px;
     font-weight: bold;
     font-style: normal;
@@ -178,7 +147,7 @@ $color-grad: #0b394e;
     width: 300px;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0px #ffffff;
+    text-shadow: 1px 1px 0px $color-white;
     margin-top: 15px;
     cursor: pointer;
 }
@@ -195,21 +164,13 @@ $color-grad: #0b394e;
 @mixin button-smaller {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
     background-color: white;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-topleft: 8px;
     border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topright: 8px;
     border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
     border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     display: inline-block;
-    color: #252525;
+    color: $color-black;
     font-size: 39px;
     font-weight: bold;
     font-style: normal;
@@ -232,30 +193,20 @@ $color-grad: #0b394e;
 }
 
 @mixin button-smallest {
-    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px $color-white;
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fcfcfc), color-stop(1, #f0f0f0) );
     background: -moz-linear-gradient( center top, #fcfcfc 5%, #f0f0f0 100% );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
     background-color: #fcfcfc;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-topleft: 8px;
     border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topright: 8px;
     border-top-right-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
     border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
     border-bottom-left-radius: 8px;
     text-indent: 0;
     border: 1px solid #dcdcdc;
     display: inline-block;
     color: #777777;
-    font-family: arial;
+    font-family: 'Lato', sans-serif;
     font-size: 19px;
     font-weight: bold;
     font-style: normal;
@@ -264,7 +215,7 @@ $color-grad: #0b394e;
     width: 100px;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0px #ffffff;
+    text-shadow: 1px 1px 0px $color-white;
     cursor: pointer;
     margin: 5px auto;
     display: block;
@@ -283,13 +234,10 @@ $color-grad: #0b394e;
     position: relative;
     font-weight: bold;
     @include br;
-    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0');
-    background-color: #D5D5D5;
+    background-color: $color-black;
     text-indent: 0;
-    text-shadow: 1px 1px 0px #ffffff;
+    text-shadow: 1px 1px 0px $color-white;
     cursor: pointer;
 }
 
@@ -303,12 +251,12 @@ $color-grad: #0b394e;
     padding: 1%;
     margin: 1%;
 
-    background-color: #fff;
+    background-color: $color-white;
 
     border-radius: 8px;
 
-    color: #252525;
-    font-family: Arial;
+    color: $color-black;
+    font-family: 'Lato', sans-serif;
     font-size: 20px;
     font-weight: bold;
 
@@ -332,15 +280,17 @@ $color-grad: #0b394e;
     }
 
     &.black {
-        background: #252525;
-        border-color: white;
-        color: white;
+        background: $color-black;
+        border-color: $color-white;
+        color: $color-white;
     }
 
     &.longBlack {
-        background: #252525;
-        border-color: white;
-        color: white;
+        background: $color-black;
+        border-color: $color-white;
+        border-style: solid;
+        border-width: 1px;
+        color: $color-white;
         height: 100%;
         width: 35.5em;
         padding-left: 2%;
@@ -351,7 +301,7 @@ $color-grad: #0b394e;
         font-size: 0.750em;
 
         @include mobile-only{
-            font-size: 10px; //play with later
+            font-size: 10px;
         }
     }
 
@@ -392,20 +342,12 @@ html, body, .main-container, .cont, #first-section, #inner-container{
 }
 
 html{
-    // margin: 20px;
-    // margin-top: 5px;
-    // background: url(/img/minimal-wallpaper.jpg) no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
     @include gradient-bg;
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
 
     @include mobile-only{
-        //margin: 3px;
         margin-top: 0px;
     }
 }
@@ -424,13 +366,13 @@ body{
 }
 
 .navbar .nav>li>a.brand {
-    padding-left:20px;
-    margin-left:0
+    padding-left: 20px;
+    margin-left: 0;
 }
 
 .content {
-    margin-top:50px;
-    width:70%
+    margin-top: 50px;
+    width: 70%;
 }
 
 
@@ -444,15 +386,13 @@ body{
 
         #menu-container{
             width: 100%;
-            -webkit-border-radius: 8px;
-            -moz-border-radius: 8px;
             border-radius: 8px;
-            background: #252525;
+            background: $color-black;
             margin-bottom: 10px;
             margin-top: 5px;
             padding: 5px;
 
-            @include mobile-only{
+            @include mobile-only {
                 margin-bottom: 1px;
                 margin-top: 0px;
             }
@@ -461,31 +401,81 @@ body{
                 display: inline-block;
                 margin-left: 10px;
                 font-size: 28px;
-                font-family: 'Lobster', cursive;
+                font-family: 'Lato', sans-serif;
+                width: 100px;
 
                 @include mobile-only{
                     font-size: 20px;
                 }
+            }
 
-                #first-word{
-                    color: #7CE4E8;
-                }
+            #leave-game,
+            #leave-game a {
+              display: inline-block;
+              float:right;
+              font-size: 20px;
+              color: $color-white;
+              width: 75px;
+              cursor: pointer;
+              text-align: center;
 
-                #second-word{
-                    color: #FFFFA5;
-                }
+              @include mobile-only{
+                  font-size: 0.7rem;
+                  margin-right: 1px;
+                  margin-top: 5px;
+                  padding: 5px;
+                  width: 30px;
+              }
+            }
 
-                #third-word{
-                    color: #FC575E;
-                }
+            #leave-game:hover,
+            #leave-game a:hover,
+            #leave-game a:active,
+            #leave-game a:focus{
+               color: $color-main-orange;
+               background: none;
+            }
+
+            #game-info,
+            #game-info a {
+              color: $color-white;
+              cursor: pointer;
+              display: inline-block;
+              float: right;
+              font-size: 20px;
+              text-align: center;
+              width: 75px;
+
+              @include mobile-only {
+                  font-size: 0.7rem;
+                  margin-right: 1px;
+                  margin-top: 5px;
+                  padding: 5px;
+                  width: 30px;
+              }
+            }
+
+            #game-info:hover,
+            #game-info a:hover,
+            #game-info a:active,
+            #game-info a:focus {
+               background: none;
+               color: $color-main-orange;
+            }
+
+            .btn-custom,
+            .btn-custom:hover,
+            .btn-custom:focus,
+            .btn-custom:active {
+              background: $color-main-orange;
+              color: $color-black;
+              outline: none;
             }
 
             #abandon-game-button{
                 display: inline-block;
                 float:right;
                 border-radius: 8px;
-                -moz-border-radius: 8px;
-                -webkit-border-radius: 8px;
                 font-size: 20px;
                 font-size: 1.25rem;
                 font-weight: 400;
@@ -556,17 +546,14 @@ body{
                 position: relative;
                 top: 0;
                 left: 0;
-                // background: white;
             }
 
             #player-container{
-                height: 13.166667%;
+                background: $color-black;
+                height: 9%;
+                margin: 0 0 2% 8%;
+                min-height: 60px;
                 position: relative;
-                padding-top: 4%;
-                padding-bottom: 4%;
-                min-height: 85px;
-                background: #7CE4E8;
-                margin: 0 0 6% 8%;
                 @include br;
 
                 @include mobile-only{
@@ -588,17 +575,19 @@ body{
                     }
 
                     #avatar_ {
-                        height: 100%;
-                        width: 38%;
                         float: left;
+                        height: 25px;
+                        margin-right: 10px;
                         position: relative;
+                        width: 25px;
                         z-index: 999;
+
 
                         #king {
                            position: absolute;
                            max-width: 80%;
                            bottom: 20px;
-                           -webkit-transform: rotate(-18deg);
+                           transform: rotate(-18deg);
                            left: -5px;
 
                            @include tablet-portrait-only {
@@ -615,17 +604,19 @@ body{
 
 
                         img {
-                            width: 100%;
-                            height: 140%;
                             float: left;
+                            height: 70%;
+                            min-height: 25px;
+                            min-width: 25px;
+                            width: 75%;
                             @include br;
-                            min-width: 40px;
-                            min-height: 40px;
+
+
 
                             @include tablet-portrait-only{
-                                width: 100%;
-                                height: 100%;
+                                height: 70%;
                                 margin-left: 3px;
+                                width: 75%;
                             }
 
                             @include mobile-only{
@@ -638,12 +629,12 @@ body{
                         }
                     }
                     #player-container-inner{
-                        float: left;
                         position: relative;
                         bottom: 8px;
                         left: 2px;
                         max-width: 62%;
                         overflow: hidden;
+                        text-align: center;
 
                         @include tablet-portrait-only{
                             left: 3px;
@@ -659,17 +650,19 @@ body{
                         #player-name{
 
                             h4{
-                                font-family: 'Lobster', cursive;
+                                color: $color-white;
+                                font-family: 'Lato', sans-serif;
+                                font-size: 13px;
                                 margin-bottom: 0px;
                             }
                             h4{
 
                                 @include tablet-portrait-only{
-                                    font-size: 14px;
+                                    font-size: 13px;
                                 }
 
                                 @include mobile-only{
-                                    font-family: 'Lobster', cursive;
+                                    font-family: 'Lato', sans-serif;
                                     font-size: 10px;
                                     margin-top: 3px;
                                     margin-bottom: 5px;
@@ -678,16 +671,17 @@ body{
                         }
 
                         #player-score{
-                            float: left;
+                            text-align: center;
 
                             h2{
-
-                                font-size: 26px;
-                                margin-top: 0;
+                                color: $color-main-orange;
+                                font-size: 13px;
                                 margin-bottom: 0;
+                                margin-top: 5px;
+
 
                                 @include tablet-portrait-only{
-                                    font-size: 21px;
+                                    font-size: 13px;
                                 }
 
                                 @include mobile-only{
@@ -725,20 +719,19 @@ body{
                 #czar-container {
                     position: absolute;
                     bottom: 0;
-                    text-align: center;
                     width: 100%;
-                    @include br-bottom;
-                    background: black;
-                    opacity:0.4;
+                    text-align: center;
 
                     @include mobile-only{
                         overflow: auto;
                     }
 
                     #the-czar{
-                        color: #fff;
-                        font-weight: bold;
-                        font-size: 20px;
+                        color: $color-white;
+                        font-family: 'Lato', sans-serif;
+                        font-size: 13px;
+                        margin-bottom: 0;
+                        margin-right: 15px;
 
                         @include mobile-only{
                             display: none;
@@ -759,9 +752,9 @@ body{
 
             #upper-gameplay-container {
                 height: 28%;
-                width: 100%;
-                min-height: 220px;
                 max-height: 220px;
+                min-height: 220px;
+                width: 95%;
 
                 @include mobile-only{
                     min-height: 140px;
@@ -791,11 +784,11 @@ body{
                     }
 
                     #menu-container{
-                        display: none;
                         @include soft-button;
+                        display: none;
                         height: 20%;
-                        margin-bottom: 16px;
                         line-height: 20%;
+                        margin-bottom: 30px;
                         @include br;
 
                         #menu-button{
@@ -812,14 +805,14 @@ body{
                         #inner-timer-container{
                             text-align: center;
                             @include soft-button;
-                            background: #FFF;
+                            background: $color-black;
                             text-shadow: none;
                             cursor: default;
                             border: none;
                             min-width: 85px;
                             min-height: 85px;
                             height: 100%;
-                            color: #000;
+                            color: $color-main-orange;
 
                             #timer-status-round, #timer-status-czar-choosing{
                                 position: absolute;
@@ -839,11 +832,11 @@ body{
                             }
 
                             #time{
-                                font-family: 'Lobster', cursive;
-                                font-size: 110px;
-                                position: absolute;
                                 bottom: 25%;
+                                font-family: 'Lato', sans-serif;
+                                font-size: 110px;
                                 left: 0;
+                                position: absolute;
                                 right: 0;
 
                                 @include tablet-landscape-and-below{
@@ -908,14 +901,24 @@ body{
                                 }
 
                                 #player-count-container, #loading-container, #start-game-container{
-                                    width: 33.333%;
-                                    float: left;
+                                    margin-left: auto;
+                                    margin-right: auto;
                                     text-align: center;
+                                    width: 100%;
                                 }
+
+                                #start-game-container {
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    text-align: center;
+                                    width: 33.333%;
+                                  }
 
                                 #player-count-container{
                                     #player-count{
                                         font-size: 33px;
+                                        color: $color-main-orange;
+                                        margin-top: 10px;
 
                                         @include mobile-only{
                                             font-size: 21px;
@@ -923,6 +926,7 @@ body{
                                     }
                                     #the-word-players{
                                         font-size: 17px;
+                                        color: $color-main-orange;
                                     }
                                 }
 
@@ -935,20 +939,18 @@ body{
                                 }
 
                                 #start-game-container{
-                                    color: #333;
+                                    color: $color-white;
 
                                     #start-game-button{
                                         border-radius: 8px;
-                                        -moz-border-radius: 5px;
-                                        -webkit-border-radius: 5px;
                                         font-size: 20px;
                                         font-size: 1.25rem;
-                                        font-weight: 400;
-                                        color: white;
-                                        background: #1F959C;
+                                        font-weight: bolder;
+                                        font-style: italic;
+                                        color: $color-white;
+                                        background: $color-main-orange;
                                         padding: 0.65em 20px;
-                                        margin: 10px;
-                                        width: 65%;
+                                        width: 100%;
                                         cursor: pointer;
 
                                         @include tablet-portrait-only{
@@ -963,7 +965,7 @@ body{
                                     }
 
                                     #start-game-button:hover{
-                                       background:#41C2CA;
+                                       background: $color-hover-orange;
                                     }
                                 }
                             }
@@ -992,13 +994,13 @@ body{
             }
             #info-container{
                 width: 100%;
-                background: #252525;
+                background: $color-black;
                 color: white;
                 @include br;
                 text-align: center;
                 padding: 15px;
                 height: 50%;
-                margin-top: 10px;
+                margin-top: 50px;
 
                 @include tablet-portrait-only{
                     padding-top: 5px;
@@ -1017,8 +1019,9 @@ body{
                     margin: 0 5%;
 
                     #lobby-how-to-play{
-                        font-size: 18px;
+                        font-size: 15px;
                         margin-top: 10px;
+                        text-align: center;
 
                         @include tablet-portrait-only{
                             font-size: 14px;
@@ -1046,12 +1049,13 @@ body{
 
             #game-end-container{
                 width: 100%;
-                background: #252525;
+                background: $color-black;
                 @include br;
                 text-align: center;
                 overflow: hidden;
                 height: 50%;
                 margin-top: 10px;
+                margin-left: 50px;
 
                 @include mobile-only{
                     height: 65%;
@@ -1067,12 +1071,12 @@ body{
                 }
 
                 #inner-info-exit{
-                    width: 60%;
-                    position: relative;
-                    overflow: hidden;
-                    height: 100%;
                     color: white;
-                    float: left;
+                    height: 100%;
+                    margin-top: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    width: 100%;
 
                     @include mobile-only{
                         float: none;
@@ -1101,32 +1105,38 @@ body{
                         }
 
                         #join-new-game{
-                            float: left;
-                            @include button-smaller;
                             width: 40%;
-                            margin: 5%;
-                            height: 28%;
-                            font-size: 21px;
-                            line-height: 155%;
+                            font-size: 16px;
                             padding-top: 5%;
+                            color: $color-main-orange;
+                            font-weight: bold;
+                            font-family: 'Lato', sans-serif;
+                            text-decoration: none;
+                            text-align: center;
+                            cursor: pointer;
+                            margin: 5px auto;
 
                              &:hover{
-                                @include button-hover-smaller;
+                                background: none;
+                                color: $color-hover-orange;
                             }
                         }
 
                         #exit-match{
-                            float: left;
-                            @include button-smaller;
                             width: 40%;
-                            margin: 5%;
-                            height: 28%;
-                            font-size: 21px;
-                            line-height: 155%;
+                            font-size: 16px;
                             padding-top: 5%;
+                            color: $color-main-orange;
+                            font-weight: bold;
+                            font-family: 'Lato', sans-serif;
+                            text-decoration: none;
+                            text-align: center;
+                            cursor: pointer;
+                            margin: 5px auto;
 
                              &:hover{
-                                @include button-hover-smaller;
+                                background: none;
+                                color: $color-hover-orange;
                             }
                         }
 
@@ -1137,7 +1147,7 @@ body{
             #czar-blank-container{
                 color: white;
                 width: 100%;
-                background: #252525;
+                background: $color-black;
                 @include br;
                 text-align: center;
                 overflow: hidden;
@@ -1167,8 +1177,8 @@ body{
 
                 #charity-fact-container{
                     @include br;
-                    background-color: #fff;
-                    color: black;
+                    background-color: $color-black;
+                    color: $color-white;
 
                     position: absolute;
                     bottom: 4%;
@@ -1183,11 +1193,11 @@ body{
                     }
 
                     #charity-fact-tagline{
-                        font-family: 'Lobster', cursive;
+                        color: $color-main-orange;
+                        font-family: 'Lato', sans-serif;
                         font-size: 22px;
-                        margin-left: 2%;
                         margin-bottom: 3px;
-                        color: #000;
+                        margin-left: 2%;
 
                         @include mobile-only{
                             font-size: 16px;
@@ -1218,6 +1228,7 @@ body{
                             float: right;
                             margin-right: 2%;
                             margin-bottom: 3px;
+                            width: 20%;
 
                             @include mobile-only{
                                 width: 53%;
@@ -1229,7 +1240,7 @@ body{
 
             #cards-container{
                 width: 100%;
-                background: #252525;
+                background: $color-black;
                 margin-top: 11px;
                 @include br;
 
@@ -1246,8 +1257,6 @@ body{
 
                     @include mobile-only{
                         background: #252525;
-                        -webkit-border-radius: 8px;
-                        -moz-border-radius: 8px;
                         border-radius: 8px;
                         max-height: 245px;
                     }
@@ -1271,18 +1280,13 @@ body{
 
 //Attempt to Modify our Charity Banner
 .crDonateWidget {
-    -webkit-box-shadow: 0px 0px 0px 0px transparent !important;
-    -moz-box-shadow: 0px 0px 0px 0px transparent !important;
     box-shadow: 0px 0px 0px 0px transparent !important;
-    -webkit-border-radius: 8px !important;
-    -moz-border-radius: 8px !important;
     border-radius: 8px !important;
 }
 
 .crDonateWidgetOuter {
     text-align: center;
     background-color: transparent !important;
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0) !important;
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0) !important;
     border: 0px solid #e6e6e6 !important;
     margin: 0px 0px !important;
@@ -1322,13 +1326,9 @@ body{
     width: 80% !important;
     margin-top: 8px !important;
     background: rgb(244,120,31) !important;
-    -webkit-border-radius: 8px !important;
-    -moz-border-radius: 8px !important;
     border-radius: 8px !important;
     text-transform: none !important;
     .donateNow{
         border-top: 0px solid black !important;
     }
 }
-
-
