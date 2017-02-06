@@ -34,7 +34,7 @@ About the Game
 -------------
 The game is simple - each player is given 10 answer cards which are used to fill in the question card. For each round, one player is the "Card Czar". Their sole job is to select a submitted answer card that they think best fits the question. Whoever's card is selected wins a point for the round.
 
-Cards Against Humanity is open-source and licensed under Creative Commons.
+Cards Against Humanity is open-source and licensed under Creative Commons. The idea for Cards for Humanity was to create a web version of the game we love so much, while still doing something good for humanity. To achieve this we integrated the option to donate to the [Make a Wish Foundation](https://www.crowdrise.com/donate/project/cfhio/cards4humanity).
 
 The app is completely functional across all devices. We used Socket.io to create rooms which hold up 11 players at a time, and also included the functionality to create private rooms once logged in. We also used Passport to handle authentication.
 
