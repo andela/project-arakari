@@ -57,9 +57,9 @@ $(document).ready(function() {
               </div>
             </span>
               <span ng-hide="showOptions">
-              <a href="#"><div class="btn btn-orange" data-toggle="modal" data-target="#strangerModal" style="margin: 10px; font-family: Lato;"><b></i>Play Game with Strangers</b></div>
+              <a href="#"><div class="btn btn-orange" data-toggle="modal" data-target="#strangerModal" style="margin: 10px; font-family: Lato;"><b></i>Play Game with new Friends</b></div>
               </a>
-              <a href="#"><div class="btn btn-orange" id="landing" data-toggle="modal" data-target="#friendModal" style="font-family: Lato;"><b></i>Play Game with Friends</b></div></a>
+              <a href="#"><div class="btn btn-orange" id="landing" data-toggle="modal" data-target="#friendModal" style="font-family: Lato;"><b></i>Play Game with old Friends</b></div></a>
               </span>
               <h3>OR</h3>
               <i><b><u><a onClick="scroll(0,742);" style="color:#fff">learn how to play</a></u></b></i>
@@ -244,10 +244,10 @@ $(document).ready(function() {
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <p style="text-align: center;"><b>You are about to start a game with strangers.</b></p>
+        <p style="text-align: center;"><b>You are about to start a game with strangers <br> and make some new friends :)</b></p>
         <div class="modal-footer">
         <a href="/play" style="color: #A54E00;">Continue</a>
-        <a type="button" style="color: #A54E00; padding-left: 15px;" data-dismiss="modal">Close</a>
+        <a style="color: #A54E00; margin-left: 15px;" data-dismiss="modal">Close</a>
         </div>
       </div>
 
@@ -264,7 +264,7 @@ $(document).ready(function() {
         <p style="text-align: center;"><b>You are about to start a game with your friends.<b></p>
         <div class="modal-footer">
         <a href="/play?custom" style="color: #A54E00;">Continue</a>
-        <a style="color: #A54E00; padding-left: 15px;" data-dismiss="modal">Close</a>
+        <a style="color: #A54E00; margin-left: 15px;" data-dismiss="modal">Close</a>
         </div>
       </div>
 
