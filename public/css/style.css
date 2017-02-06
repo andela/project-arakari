@@ -17,7 +17,7 @@
  
  .sign-in {
    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/cfh.png') no-repeat center center fixed;
-   opacity: 0.7%;
+   opacity: 0.5;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -73,16 +73,15 @@
    display: inline-block;
    text-align: left
  }
-
-  #nav-li,
+ 
+ #nav-li,
  #nav-li li,
- #nav-li li a{
+ #nav-li li a {
    background: transparent;
    cursor: pointer;
  }
-
-
- #nav-li li:hover{
+ 
+ #nav-li li:hover {
    color: #A54E00;
    background: #000;
    cursor: pointer;
