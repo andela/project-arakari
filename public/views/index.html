@@ -27,12 +27,13 @@ $(document).ready(function() {
         <a class="navbar-brand" href="#"><img src="img/trans.png" width="100px" alt=""></a>
       </div>
       <div class="collapse navbar-collapse wpb-menu-container" id="bs-example-navbar-collapse-1" style="margin-top: 20px">
-        <ul class="nav navbar-nav navbar-right main-nav" >
-          <li><a href="#intro" style="color:#FF8416"><b><i class="fa fa-home"></i> HOME</b></a></li>
-          <li><a onClick="scroll(0,2021);" style="color:#fff"><b> <i class="fa fa-info-circle"></i> ABOUT US</b></a></li>
-          <li><a onClick="scroll(0,742);" style="color:#fff"><b> <i class=" fa fa-commenting-o"></i> HOW TO PLAY</b></a></li>
-          <li><a href="#!/signin" style="color:#fff"><b> <i class="fa fa-key"></i> SIGN IN</b></a></li>
-          
+        <ul class="nav navbar-nav navbar-right main-nav" id="nav-li">
+          <li><a onClick="scroll(0,0)" href="#/intro" style="color:#FF8416"><b><i class="fa fa-home"></i> HOME</b></a></li>
+          <li><a onClick="scroll(0,2400);" style="color:#fff"><b> <i class="fa fa-info-circle"></i> ABOUT US</b></a></li>
+          <li><a onClick="scroll(0,842);" style="color:#fff"><b> <i class=" fa fa-commenting-o"></i> HOW TO PLAY</b></a></li>
+         <li ng-show="showOptions"><a href="#!/signin" style="color:#fff"><b> <i class="fa fa-key"></i> SIGN IN</b></a></li>
+          <li ng-hide="showOptions"><a href="/signout" style="color:#fff"><b> <i class="fa fa-key"></i> SIGN OUT</b></a></li> 
+        </ul>
       </div>
       <!-- /.navbar-collapse -->
     </div>
@@ -41,7 +42,7 @@ $(document).ready(function() {
 <!-- Fixed Logo & Menu Bar End -->
 
 <!-- Landing Start -->
-<header id="intro" style="background-color: #000">
+<header id="intro" style="background-color: #000; height: 830px;">
 <img src="img/cfh.png"  >
     <div class="container">
       <div class="table">
@@ -50,7 +51,16 @@ $(document).ready(function() {
             <div class="col-md-12 text-center">
               <h1 ><b style="font-family: 'Lato', sans-serif;">CARDS FOR HUMANITY</b></h1>
               <h3 class="boldv">A GAME FOR HORRIBLE PEOPLE DESPERATE TO DO GOOD</h3>
-              <a href="/play" class="btn btn-orange"  width="100px"><i class="fa fa-gamepad"></i> PLAY GAME</a>
+              <span ng-show="showOptions">
+              <div> 
+                <a href="/play" class="btn btn-orange" style="font-family: Lato;"><b></i>Play as Guest</b></a>
+              </div>
+            </span>
+              <span ng-hide="showOptions">
+              <a href="#"><div class="btn btn-orange" data-toggle="modal" data-target="#strangerModal" style="margin: 10px; font-family: Lato;"><b></i>Play Game with new Friends</b></div>
+              </a>
+              <a href="#"><div class="btn btn-orange" id="landing" data-toggle="modal" data-target="#friendModal" style="font-family: Lato;"><b></i>Play Game with old Friends</b></div></a>
+              </span>
               <h3>OR</h3>
               <i><b><u><a onClick="scroll(0,742);" style="color:#fff">learn how to play</a></u></b></i>
             </div>
@@ -61,25 +71,27 @@ $(document).ready(function() {
   </header>
 
 <!-- Landing End -->
+  <div ng-controller="IndexController"></div>
 
 
 <!-- How to Play Start -->
-    <section id="howto" class="section" style="background-color: #000" >
+    <section id="howto" class="section" style="background-color: #000; height: 830px;" >
     <img src="img/cfh.png" class="section_img">
     <div class="container">
-      <div class="col-md-10">
-      <div class="paneln ">
+      <div class="col-md-12">
+      <div class="paneln">
         <div class="<panel-body>" style="background-color : transparent;">
-          <button class="btn btn-orange-faint" style="text-align: : center;margin-left: 520px"  ><b>HOW TO PLAY</b></button>
+          <div class="btn btn-orange-faint" style="text-align:center; margin-left: 180px; margin-top: 70px; width: 700px; opacity: 0.8;"><b>HOW TO PLAY</b></div>
         </div>
         <br>
       </div>
-      <div class="col-md-7">
+      <div style="margin-top: 30px;">
+      <div class="col-md-7" style="margin-left: 70px;">
         
                <iframe width="100%" height="315" src="https://www.youtube.com/embed/_U8lUp7zc8k" frameborder="0" allowfullscreen></iframe>
                  
       </div>
-      <div class="col-md-3"  style="margin-left: 153px">
+      <div class="col-md-3" style="margin-right: 90px;">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -117,7 +129,23 @@ $(document).ready(function() {
       <span class="fa fa-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+    </div>
   </div>
+  <div class="col-md-12" style="padding-top: 60px; padding-left: 30px;">
+  <span id='send-link' ng-show="showOptions"> *To send a private link to your friends, sign up! </span>
+    <div id="sign-up">
+      <span id="tweet-container-index">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cfh.io" data-text="Cards for Humanity: A Game for Horrible People Desperately Trying to do Good" data-related="CFH_App">Tweet</a>
+        <a href="https://twitter.com/cfh_app" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @cfh_app</a>
+      </span>
+      <span id='facebook-share'>
+        <a href="#" onclick=" window.open(
+          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">
+          Share on Facebook
+        </a>
+      </span>
+    
+      </div>
       </div>
       </div>
     </div>
@@ -207,4 +235,42 @@ $(document).ready(function() {
   </div>
 </section>
 <!-- Footer End -->
+</div>
+
+<!-- Modal -->
+<div id="strangerModal" class="modal fade" role="dialog" style="margin-top: 100px;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p style="text-align: center;"><b>You are about to start a game with strangers <br> and make some new friends :)</b></p>
+        <div class="modal-footer">
+        <a href="/play" style="color: #A54E00;">Continue</a>
+        <a style="color: #A54E00; margin-left: 15px;" data-dismiss="modal">Close</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<div id="friendModal" class="modal fade" role="dialog" style="margin-top: 100px;">
+  <div class="modal-dialog" style="background-color: #000;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p style="text-align: center;"><b>You are about to start a game with your friends.<b></p>
+        <div class="modal-footer">
+        <a href="/play?custom" style="color: #A54E00;">Continue</a>
+        <a style="color: #A54E00; margin-left: 15px;" data-dismiss="modal">Close</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</section>
 </div>
