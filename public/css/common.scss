@@ -1177,8 +1177,8 @@ body{
 
                 #charity-fact-container{
                     @include br;
-                    background-color: $color-white;
-                    color: black;
+                    background-color: $color-black;
+                    color: $color-white;
 
                     position: absolute;
                     bottom: 4%;
@@ -1193,7 +1193,7 @@ body{
                     }
 
                     #charity-fact-tagline{
-                        color: $color-black;
+                        color: $color-main-orange;
                         font-family: 'Lato', sans-serif;
                         font-size: 22px;
                         margin-bottom: 3px;
@@ -1228,6 +1228,7 @@ body{
                             float: right;
                             margin-right: 2%;
                             margin-bottom: 3px;
+                            width: 20%;
 
                             @include mobile-only{
                                 width: 53%;

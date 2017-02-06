@@ -715,8 +715,8 @@ body {
             font-size: 18px; }
         #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container {
           border-radius: 8px;
-          background-color: #fff;
-          color: black;
+          background-color: #000;
+          color: #fff;
           position: absolute;
           bottom: 4%;
           margin: 0 2%;
@@ -728,7 +728,7 @@ body {
               height: 40%;
               display: none; } }
           #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container #charity-fact-tagline {
-            color: #000;
+            color: #ff8416;
             font-family: 'Lato', sans-serif;
             font-size: 22px;
             margin-bottom: 3px;
@@ -753,7 +753,8 @@ body {
           #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container #charity-logo-container img {
             float: right;
             margin-right: 2%;
-            margin-bottom: 3px; }
+            margin-bottom: 3px;
+            width: 20%; }
             @media (max-width: 520px) {
               #main-container #app-container #gameplay-container #czar-blank-container #charity-fact-container #charity-logo-container img {
                 width: 53%; } }
