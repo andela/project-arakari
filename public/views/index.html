@@ -8,6 +8,14 @@ $(document).ready(function() {
 
   });
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=449699711888450";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato');
 </style>
@@ -135,17 +143,14 @@ $(document).ready(function() {
   <span id='send-link' ng-show="showOptions"> *To send a private link to your friends, sign up! </span>
     <div id="sign-up">
       <span id="tweet-container-index">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cfh.io" data-text="Cards for Humanity: A Game for Horrible People Desperately Trying to do Good" data-related="CFH_App">Tweet</a>
-        
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cfh.io" data-text="Cards for Humanity: A Game for Horrible People Desperately Trying to do Good" data-related="CFH_App" >Tweet</a>
         <a href="https://twitter.com/cfh_app" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @cfh_app</a>
       </span>
       <span id='facebook-share'>
-        <a href="#" onclick=" window.open(
+        <a href="#" class="fb-share-button" onclick=" window.open(
           'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">
-          Share on Facebook
         </a>
       </span>
-    
       </div>
       </div>
       </div>
