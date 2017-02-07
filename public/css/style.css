@@ -108,10 +108,9 @@
  
  #facebook-share {
    font-size: 12px;
-   padding: 3px;
+   padding: 1px;
    background: white;
    border-radius: 3px;
-   margin-left: 10px;
    background-color: #f8f8f8;
    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dedede));
    background-image: -moz-linear-gradient(top, #fff, #dedede);

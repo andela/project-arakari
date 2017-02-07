@@ -8,6 +8,14 @@ $(document).ready(function() {
 
   });
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=449699711888450";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato');
 </style>
@@ -57,12 +65,12 @@ $(document).ready(function() {
               </div>
             </span>
               <span ng-hide="showOptions">
-              <a href="#"><div class="btn btn-orange" data-toggle="modal" data-target="#strangerModal" style="margin: 10px; font-family: Lato;"><b></i>Play Game with new Friends</b></div>
+              <a href="#"><div class="btn btn-orange" data-toggle="modal" data-target="#strangerModal" style="margin: 10px; font-family: Lato;"><b></i>Play Game With New Friends</b></div>
               </a>
-              <a href="#"><div class="btn btn-orange" id="landing" data-toggle="modal" data-target="#friendModal" style="font-family: Lato;"><b></i>Play Game with old Friends</b></div></a>
+              <a href="#"><div class="btn btn-orange" id="landing" data-toggle="modal" data-target="#friendModal" style="font-family: Lato;"><b></i>Play Game With Old Friends</b></div></a>
               </span>
               <h3>OR</h3>
-              <i><b><u><a onClick="scroll(0,742);" style="color:#fff">learn how to play</a></u></b></i>
+              <i><b><u><a onClick="scroll(0,842);" style="color:#fff">learn how to play</a></u></b></i>
             </div>
           </div>
         </div>
@@ -133,16 +141,14 @@ $(document).ready(function() {
   <span id='send-link' ng-show="showOptions"> *To send a private link to your friends, sign up! </span>
     <div id="sign-up">
       <span id="tweet-container-index">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cfh.io" data-text="Cards for Humanity: A Game for Horrible People Desperately Trying to do Good" data-related="CFH_App">Tweet</a>
-        <a href="https://twitter.com/cfh_app" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @cfh_app</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cfh.io" data-text="Cards for Humanity: A Game for Horrible People Desperately Trying to do Good" data-related="CFH_App" >Tweet</a>
+        <a href="https://twitter.com/cfh_app" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow</a>
       </span>
       <span id='facebook-share'>
-        <a href="#" onclick=" window.open(
+        <a href="#" class="fb-share-button" onclick=" window.open(
           'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">
-          Share on Facebook
         </a>
       </span>
-    
       </div>
       </div>
       </div>
@@ -244,8 +250,10 @@ $(document).ready(function() {
       <div class="modal-body">
         <p style="text-align: center;"><b>You are about to start a game with strangers <br> and make some new friends :)</b></p>
         <div class="modal-footer">
+        <b>
         <a href="/play" style="color: #A54E00;">Continue</a>
         <a style="color: #A54E00; margin-left: 15px;" data-dismiss="modal">Close</a>
+        </b>
         </div>
       </div>
 
@@ -259,10 +267,12 @@ $(document).ready(function() {
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <p style="text-align: center;"><b>You are about to start a game with your friends.<b></p>
+        <p style="text-align: center;"><b>You are about to start a game with your friends.</b></p>
         <div class="modal-footer">
+        <b>
         <a href="/play?custom" style="color: #A54E00;">Continue</a>
         <a style="color: #A54E00; margin-left: 15px;" data-dismiss="modal">Close</a>
+        </b>
         </div>
       </div>
 
